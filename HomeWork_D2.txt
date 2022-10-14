@@ -1,0 +1,77 @@
+from news.models import *
+# 1. Создать двух пользователей (с помощью метода User.objects.create_user('username')).
+User.objects.create_user(username='IvanP', first_name='Ivan', last_name='Petrov', email = 'ip_1245@ya.com')
+User.objects.create_user(username='PetrI', first_name='Petr', last_name='Ivanov', email='pi-4512@ya.com')
+# 2. Создать два объекта модели Author, связанные с пользователями.
+Author.objects.create(userAuthor_id=1)
+Author.objects.create(userAuthor_id=2)
+# 3. Добавить 4 категории в модель Category.
+Category.objects.create(category='NW')
+Category.objects.create(category='PL')
+Category.objects.create(category='FN')
+Category.objects.create(category='ED')
+# 4. Добавить 2 статьи и 1 новость.
+# 5. Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
+u1 = User.objects.get(last_name='Petrov')
+Post.objects.create(author=u1.author, post='A', title='How to make good', text='To make good do not make bad.')
+Post.objects.get(id=1).category.add(Category.objects.get(category='ED'))
+Post.objects.create(author=u1.author, title='What happens?', text='Happens that happens.')
+Post.objects.get(id=2).category.add(Category.objects.get(category='NW'))
+Post.objects.get(id=2).category.add(Category.objects.get(category='PL'))
+u2 = User.objects.get(last_name='Ivanov')
+Post.objects.create(author=u2.author, post='A', title='How to make better', text='Making better you cannot make good.')
+Post.objects.get(id=3).category.add(Category.objects.get(category='PL'))
+Post.objects.get(id=3).category.add(Category.objects.get(category='FN'))
+# 6. Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
+Comment.objects.create(post=Post.objects.get(id=1), user=u2, text='Why you even make?')
+Comment.objects.create(post=Post.objects.get(id=1), user=u1, text='To make or not to make?')
+Comment.objects.create(post=Post.objects.get(id=2), user=u2, text='Happens more than happens')
+Comment.objects.create(post=Post.objects.get(id=3), user=u1, text='Making good you cannot make better.')
+Comment.objects.create(post=Post.objects.get(id=3), user=u2, text='Making good you cannot make worse.')
+# 7. Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.
+Comment.objects.get(id=1).like()
+Comment.objects.get(id=1).like()
+Comment.objects.get(id=1).dislike()
+Comment.objects.get(id=2).dislike()
+Comment.objects.get(id=2).like()
+Comment.objects.get(id=2).like()
+Comment.objects.get(id=2).like()
+Comment.objects.get(id=3).dislike()
+Comment.objects.get(id=3).dislike()
+Comment.objects.get(id=4).like()
+Comment.objects.get(id=5).dislike()
+Post.objects.get(id=1).like()
+Post.objects.get(id=2).like()
+Post.objects.get(id=3).like()
+Post.objects.get(id=1).dislike()
+Post.objects.get(id=2).dislike()
+Post.objects.get(id=3).like()
+Post.objects.get(id=1).dislike()
+Post.objects.get(id=2).like()
+Post.objects.get(id=3).dislike()
+Post.objects.get(id=1).like()
+Post.objects.get(id=3).like()
+# 8. Обновить рейтинги пользователей.
+Author.objects.get(userAuthor=u1).update_rating()
+Author.objects.get(userAuthor=u2).update_rating()
+Author.objects.get(userAuthor=u1).rating
+Author.objects.get(userAuthor=u2).rating
+# 9. Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
+a_best = Author.objects.order_by('-rating').values('id')[0]['id']
+Author.objects.get(id=a_best).userAuthor.username
+Author.objects.get(id=a_best).rating
+# 10. Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
+p_best = Post.objects.order_by('-rating').values('id')[0]['id']
+Post.objects.get(id=p_best).time_in.strftime('%d-%m-%y')
+Post.objects.get(id=p_best).author.userAuthor.username
+Post.objects.get(id=p_best).rating
+Post.objects.get(id=p_best).get_title()
+Post.objects.get(id=p_best).preview()
+# 11. Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
+' ... '.join(f'Comment: {i}' for i in Comment.objects.filter(post_id=p_best))
+
+
+
+
+
+

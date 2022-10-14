@@ -1,0 +1,22 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+Post
+{% endblock title %}
+ 
+{% block content %}
+    <h2>Our publications</h2>
+    <hr>
+    <p>{{ post.getpost }}</p>
+    <h3>{{ post.get_title|censor }} by {{ post.author|censor }}</h3>
+    <p>{{ post.time_in|date:'l d M Y' }}</p>
+    <p>&nbsp;</p>
+    <p>{{ post.text|censor }}</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>_____</p>
+    <p>{% current_time '%d %b %Y %a' %} now</p>
+{% endblock content %}

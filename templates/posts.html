@@ -1,0 +1,39 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+Posts
+{% endblock title %}
+ 
+{% block content %}
+    <h2>Our publications</h2>
+    <!--<p>{{ time_now|date:'M d Y' }} today</p>-->
+    <p>{% current_time '%b %d %Y %A' %} today</p>
+    <h6> {{ posts|length }} publications at our portal</h6>
+    <h4> {{ next_publication|default_if_none:"Follow our agenda!" }} </h4>
+    <hr>
+    {% if posts %}
+        <center><table>
+            <tr>
+                <td>Category</td>
+                <td>Title</td>
+                <td>Publication date</td>
+                <td>Shorts</td>
+                <td>Likes</td>
+            </tr>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.get_post_display }}</td>
+                <td>{{ post.get_title|censor }}</td>
+                <td>{{ post.time_in|date:'M d Y' }}</td>
+                <td>{{ post.text|censor|truncatewords:5 }}</td>
+                <td>{{ post.rating|likes_number:'star' }}</td>
+            </tr>
+            {% endfor %}
+        </table></center>
+    {% else %}
+        <h2>No news are good news!</h2>
+    {% endif %}
+{% endblock content %}
