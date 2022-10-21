@@ -5,8 +5,8 @@
 [1. Description](README.md#Description)  
 [2. Case to solve](README.md#Case-to-solve)  
 [3. Data info](README.md#Data-info)  
-[5. Result](README.md#Result:)    
-[6. Conclusions](README.md#Conclusions:) 
+[5. Result](README.md#Result)    
+[6. Conclusions](README.md#Conclusions) 
 
 ### Description
 Five models with connections created and some requests applied using Django Shell.
