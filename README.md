@@ -47,7 +47,7 @@ No specific data required.
 :arrow_up: [to content](README.md#Content)
 
 
-### Result:  
+### Result  
 All input to Django Shell at [HomeWork_D2.txt](HomeWork_D2.txt) 
 
 /posts/ pages at [News Portal](http://127.0.0.1:8000/posts/)
@@ -56,7 +56,7 @@ All input to Django Shell at [HomeWork_D2.txt](HomeWork_D2.txt)
 :arrow_up: [to content](README.md#Content)
 
 
-### Conclusions:  
+### Conclusions  
 ....
 
 :arrow_up: [to content](README.md#Content)
