@@ -26,8 +26,7 @@ Getting accustomed to some built-in classes and libraries.
 - Create 'censor' filter.
 
 
-**Practice**     
-Practice to:
+**Practice to**     
 - describe models,
 - create database,
 - input data to database,
@@ -51,6 +50,7 @@ No specific data required.
 All input to Django Shell at [HomeWork_D2.txt](HomeWork_D2.txt) 
 
 /posts/ pages at [News Portal](http://127.0.0.1:8000/posts/)
+
 
 
 :arrow_up: [to content](README.md#Content)
