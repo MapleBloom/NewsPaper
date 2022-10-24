@@ -23,10 +23,15 @@ def n_likes(value, code='like'):
 
 @register.filter(name='censor')
 def cens(value, rcode='*'):
-    str_v = str(value)
-    if not isinstance(str_v, str):
+    if isinstance(value, (int, float)):
         raise CensorError('Only strings are subject to censor')
+    if not isinstance(value, str):
+        try:
+            value = str(value)
+        except ValueError:
+            raise CensorError('Only strings are subject to censor')
 
+    str_v = value
     for x in punctuation_list:
         str_v = str_v.replace(x, ' ')
     str_v = str_v.split(' ')

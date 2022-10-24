@@ -11,7 +11,7 @@ Post
     <h2>Our publications</h2>
     <hr>
     <p>{{ post.getpost }}</p>
-    <h3>{{ post.get_title|censor }} by {{ post.author|censor }}</h3>
+    <h3>{{ post|censor }} by {{ post.author|censor }}</h3>
     <p>{{ post.time_in|date:'l d M Y' }}</p>
     <p>&nbsp;</p>
     <p>{{ post.text|censor }}</p>

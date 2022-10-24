@@ -25,8 +25,8 @@ Posts
             </tr>
             {% for post in posts %}
             <tr>
-                <td>{{ post.get_post_display }}</td>
-                <td>{{ post.get_title|censor }}</td>
+                <td>{{ post.getpost }}</td>
+                <td>{{ post|censor }}</td>
                 <td>{{ post.time_in|date:'M d Y' }}</td>
                 <td>{{ post.text|censor|truncatewords:5 }}</td>
                 <td>{{ post.rating|likes_number:'star' }}</td>
