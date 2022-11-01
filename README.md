@@ -1,5 +1,5 @@
 # [Django Project NewsPaper](http://127.0.0.1:8000/posts/)
-## Skillfactory FPW homework
+## [Skillfactory](https://skillfactory.ru) FPW homework
 
 ## Content  
 [1. Description](README.md#Description)  
@@ -15,15 +15,18 @@ Django server runs with templates, views, filters and tags.
 Getting accustomed to some built-in classes and libraries.
 /posts/ pages with posts are added.
 
+Filtration and pagination at posts list, edit, update and delete post are realised.
+
 :arrow_up: [to content](README.md#Content)
 
 
 ### Case to solve    
 - Create relational database and work with it through Django Shell.
-
-- Make views of the whole model elements in tab and of the every element as well. Apply filters and tags.
-
+- Make views of the whole model elements in tab and of the every element as well with ListView and DetailView generics. Apply filters and tags.
 - Create 'censor' filter.
+- html-code to work at templates with views and forms.
+- GET и POST parameters at HTTP-requests.
+- DeleteView, UpdateView, CreateView generics.
 
 
 **Practice to**     
@@ -34,8 +37,10 @@ Getting accustomed to some built-in classes and libraries.
 - receive data from connected tables,
 - create views with generics,
 - work with templates,
-- use generics,
-- create own filters and tags.
+- routing,
+- create own filters and tags,
+- combine filtration and pagination on one page,
+- add forms to edit and update objects, delete objects.
 
 :arrow_up: [to content](README.md#Content)
 
@@ -49,7 +54,7 @@ No specific data required.
 ### Result  
 All input to Django Shell at [HomeWork_D2.txt](HomeWork_D2.txt) 
 
-/posts/ pages at [News Portal](http://127.0.0.1:8000/posts/)
+/posts/ pages at [News Portal](http://127.0.0.1:8000/posts/) updated.
 
 
 
