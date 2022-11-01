@@ -1,0 +1,63 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+Posts
+{% endblock title %}
+ 
+{% block content %}
+    <h2>Our publications</h2>
+    <!--<p>{{ time_now|date:'M d Y' }} today</p>-->
+    <p>{% current_time '%b %d %Y %A' %} today</p>
+    <h6> You see {{ posts|length }} out of {{ paginator.count }} publications at our portal</h6>
+    <h4> {{ next_publication|default_if_none:"Follow our agenda!" }} </h4>
+    <hr>
+    <form action="" method="get">
+           {{ filterset.form.as_p }}
+           <input type="submit" class="mt-3 btn-primary" value="Search" />
+    </form>
+    <hr>
+    {% if posts %}
+        <center><table>
+            <tr>
+                <td>Category</td>
+                <td>Title</td>
+                <td>Publication date</td>
+                <td>Shorts</td>
+                <td>Likes</td>
+            </tr>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.getpost }}</td>
+                <td><a href="{{ post.id }}">{{ post.title|censor|upper }}</a></td>
+                <td>{{ post.time_in|date:'M d Y' }}</td>
+                <td>{{ post.text|censor|truncatewords:5 }}</td>
+                <td>{{ post.rating|likes_number:'star' }}</td>
+            </tr>
+            {% endfor %}
+        </table></center>
+    {% else %}
+        <h2>No news are good news!</h2>
+    {% endif %}
+ {% if page_obj.has_previous %}
+       <a href="?{% url_replace page=1 %}">1</a>
+       {% if page_obj.previous_page_number != 1 %}
+           {% if page_obj.previous_page_number != 2 %}
+               ...
+           {% endif %}
+           <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+       {% endif %}
+   {% endif %}
+   {{ page_obj.number }}
+   {% if page_obj.has_next %}
+       <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+           {% if paginator.num_pages != page_obj.next_page_number|add:1 %}
+               ...
+           {% endif %}
+           <a href="?{% url_replace page=paginator.num_pages %}">{{ paginator.num_pages }}</a>
+       {% endif %}
+   {% endif %}
+{% endblock content %}

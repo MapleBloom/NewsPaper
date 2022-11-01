@@ -15,22 +15,22 @@ LIKE_SYMBOLS = {
 punctuation_list = ['.', ',', ';', ':', '...', '!', '?', '-', '"', '(', ')',
                     '@', '$', '*', '\n', '/']
 
+
 @register.filter(name='likes_number')
 def n_likes(value, code='like'):
     postfix = LIKE_SYMBOLS[code]
     return f'{value} {postfix}'
 
 
+@register.filter()
+def authorfullname(field):
+    return f'{field.userAuthor.first_name} {field.userAuthor.last_name.upper()}'
+
+
 @register.filter(name='censor')
 def cens(value, rcode='*'):
-    if isinstance(value, (int, float)):
-        raise CensorError('Only strings are subject to censor')
     if not isinstance(value, str):
-        try:
-            value = str(value)
-        except ValueError:
-            raise CensorError('Only strings are subject to censor')
-
+        raise CensorError('Only strings are subject to censor')
     str_v = value
     for x in punctuation_list:
         str_v = str_v.replace(x, ' ')
