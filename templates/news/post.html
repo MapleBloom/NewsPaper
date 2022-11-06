@@ -14,7 +14,7 @@ Post
     <h3>{{ post.title|censor|upper }} by {{ post.author|authorfullname|censor }}</h3>
     <p>{{ post.time_in|date:'l d M Y' }}</p>
     <p>&nbsp;</p>
-    <p>{{ post.text|censor }}</p>
+    <p><em>{{ post.text|censor }}</em></p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>_____</p>

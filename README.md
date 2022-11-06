@@ -17,6 +17,8 @@ Getting accustomed to some built-in classes and libraries.
 
 Filtration and pagination at posts list, edit, update and delete post are realised.
 
+Identification, authentication and authorization are applied.
+
 :arrow_up: [to content](README.md#Content)
 
 
@@ -27,6 +29,11 @@ Filtration and pagination at posts list, edit, update and delete post are realis
 - html-code to work at templates with views and forms.
 - GET и POST parameters at HTTP-requests.
 - DeleteView, UpdateView, CreateView generics.
+<p> </p>
+
+- Two different ways to register and log in: full and via e-mail/social account.
+- Add users to different groups via admin and registration. Exclusive permissions via admin.
+- Check user permissions at views and templates.
 
 
 **Practice to**     
@@ -41,6 +48,13 @@ Filtration and pagination at posts list, edit, update and delete post are realis
 - create own filters and tags,
 - combine filtration and pagination on one page,
 - add forms to edit and update objects, delete objects.
+<p> </p>
+
+- add different registration views and apply extra functionality at them.
+- close add/change/delete views from users without permissions.
+- open navigation in templates for users with permissions only.
+- work with permissions at admin panel.
+
 
 :arrow_up: [to content](README.md#Content)
 

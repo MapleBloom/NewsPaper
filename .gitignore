@@ -6,4 +6,4 @@ venv/
 *.egg-info
 /env
 /.env
-accounts/
+
