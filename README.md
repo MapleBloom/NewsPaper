@@ -27,7 +27,7 @@ Identification, authentication and authorization are applied.
 - Make views of the whole model elements in tab and of the every element as well with ListView and DetailView generics. Apply filters and tags.
 - Create 'censor' filter.
 - html-code to work at templates with views and forms.
-- GET и POST parameters at HTTP-requests.
+- GET and POST parameters at HTTP-requests.
 - DeleteView, UpdateView, CreateView generics.
 <p> </p>
 
@@ -68,7 +68,7 @@ No specific data required.
 ### Result  
 All input to Django Shell at [HomeWork_D2.txt](HomeWork_D2.txt) 
 
-/posts/ pages at [News Portal](http://127.0.0.1:8000/posts/) updated.
+[News Portal](http://127.0.0.1:8000/posts/) updated, new pages added.
 
 
 
