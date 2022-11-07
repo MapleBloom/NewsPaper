@@ -27,7 +27,7 @@ Posts
                 <td>Publication date</td>
                 <td>Shorts</td>
                 <td>Likes</td>
-                {% if perms.news.change_post and user == post.author.userAuthor or perms.news.delete_post %}
+                {% if perms.news.change_post or perms.news.delete_post %}
                 <td>Action</td>
                 {% endif %}
             </tr>
