@@ -1,12 +1,10 @@
 from django import template
 from better_profanity import profanity
-
-
-class CensorError(Exception):
-    pass
+from django.template.defaultfilters import stringfilter
 
 
 register = template.Library()
+
 
 LIKE_SYMBOLS = {
     'like': 'likes',
@@ -28,9 +26,8 @@ def authorfullname(field):
 
 
 @register.filter(name='censor')
+@stringfilter
 def cens(value, rcode='*'):
-    if not isinstance(value, str):
-        raise CensorError('Only strings are subject to censor')
     str_v = value
     for x in punctuation_list:
         str_v = str_v.replace(x, ' ')

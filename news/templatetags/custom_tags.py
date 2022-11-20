@@ -1,6 +1,6 @@
 from datetime import datetime
 from django import template
-
+from ..models import User
 
 register = template.Library()
 
@@ -16,3 +16,13 @@ def url_replace(context, **kwargs):
     for k, v in kwargs.items():
         d[k] = v
     return d.urlencode()
+
+
+@register.simple_tag()
+def user_deleter():
+    for u in User.objects.all():
+        if u.has_perm('news.delete_post') and u.id != 3:
+            id_ = u.id
+            break
+    deleter = f'{User.objects.get(id=1).first_name} {User.objects.get(id=id_).last_name}'
+    return deleter

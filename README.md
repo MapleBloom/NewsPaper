@@ -29,10 +29,12 @@ Identification, authentication and authorization are applied.
 - html-code to work at templates with views and forms.
 - GET and POST parameters at HTTP-requests.
 - DeleteView, UpdateView, CreateView generics.
+- ModelForm, SignupForm.
+- LoginRequiredMixin, PermissionRequiredMixin. Customization.
 <p> </p>
 
 - Two different ways to register and log in: full and via e-mail/social account.
-- Add users to different groups via admin and registration. Exclusive permissions via admin.
+- Add users to different groups via admin and registration. Exclusive permissions via admin and user upgrade.
 - Check user permissions at views and templates.
 
 
