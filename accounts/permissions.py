@@ -5,10 +5,8 @@ from django.shortcuts import redirect
 class ProfileUserPermissionRequiredMixin(PermissionRequiredMixin):
     def has_permission(self):
         perms = self.get_permission_required()
-        print(perms)
         if self.get_object() != self.request.user:
             return False
-        print(self.request.user.has_perms(perms))
         return self.request.user.has_perms(perms)
 
     def handle_no_permission(self):

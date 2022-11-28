@@ -4,22 +4,22 @@
 {% load custom_tags %}
 
 {% block title %}
-Posts
+Posts by Category
 {% endblock title %}
  
 {% block content %}
     <h2>Our publications</h2>
-    <!--<p>{{ time_now|date:'M d Y' }} today</p>-->
     <p>{% current_time '%b %d %Y %A' %} today</p>
-    <h6>You see {{ posts|length }} out of {{ paginator.count }} publications at our portal</h6>
-    <h4> {{ next_publication|default_if_none:"Follow our agenda!" }} </h4>
-    <hr>
+    <h5>Category to deep into:</h5>
     <form action="" method="get">
             {% csrf_token %}
             {{ filterset.form.as_p }}
-            <input type="submit" class="mt-3 btn-primary" value="Search" />
+            <input type="submit" class="mt-3 btn-primary" value="Deep into" />
     </form>
     <hr>
+    {% if cat %}
+    <h5>You see {{ posts|length }} out of {{ paginator.count }} publications at '{{ cat }}' category</h5>
+    {% endif %}
     {% if posts %}
         <center><table>
             <tr>
@@ -40,9 +40,11 @@ Posts
                 <td><a href="{{ post.id }}">{{ post.text|censor|truncatewords:5 }}</a></td>
                 <td>{{ post.rating|likes_number:'star' }}</td>
                 <td>
-                    {% if perms.news.change_post and user == post.author.userAuthor %}
+                    {% if post.author %}
+                    {% if perms.news.change_post and post.author and user == post.author.userAuthor %}
                     <a href="{% url 'post_update' pk=post.id %}">
                     <input type="submit" class="mt-3 btn-primary" value="Update" /></a>
+                    {% endif %}
                     {% endif %}
                     {% if perms.news.delete_post %}
                     <a href="{% url 'post_delete' pk=post.id %}">
@@ -73,5 +75,22 @@ Posts
             {% endif %}
             <a href="?{% url_replace page=paginator.num_pages %}">{{ paginator.num_pages }}</a>
         {% endif %}
+    {% endif %}
+    <hr>
+    {% if cat and not is_subscriber %}
+        <h5>Follow publications at '{{ cat }}' category
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'subscribe' cat.id %}?next={{request.path}}?category={{cat.id}}">
+            <input type="submit" class="mt-3 btn-primary" value="Follow" /></a>
+        {% else %}
+            <a href="{% url 'account_login' %}?next={{request.path}}?category={{cat.id}}">
+            <input type="submit" class="mt-3 btn-primary" value="Log in" /></a>
+        {% endif %}
+        </h5>
+    {% endif %}
+    {% if is_subscriber %}
+        <h5>You are subscribed to follow '{{ cat }}' category
+        <a href="{% url 'unsubscribe' cat.id %}?next={{request.path}}?category={{cat.id}}">
+        <input type="submit" class="mt-3 btn-primary" value="Not follow" /></a></h5>
     {% endif %}
 {% endblock content %}

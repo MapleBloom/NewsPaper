@@ -37,3 +37,11 @@ class PostFilter(FilterSet):
             #'category': ['exact'],
             #'time_in.date': ['gt'],
         }
+
+
+class CategoryFilter(FilterSet):
+    category = ModelChoiceFilter(
+        field_name='category',
+        queryset=Category.objects.all(),
+        label='',
+    )

@@ -36,7 +36,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/posts/">Posts</a>
                         </li>
-                        {% if perms.news.add_post %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/posts/posts-by-category">by Category</a>
+                        </li>
+                        {% if perms.news.add_post and in_limit != 0 %}
                         <li class="nav-item">
                             <a class="nav-link" href="/posts/create">Create post</a>
                         </li>

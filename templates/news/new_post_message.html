@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+</head>
+<body>
+    <h3>Dear {{user}}!</h3>
+    <p></p>
+    <h4>Take a look at fresh {{ post.getpost }} in {{ category }} publications:</h4>
+    <hr>
+    <p>Posted {{ post.time_in|date:'M d Y' }}</p>
+    <p></p>
+    <h3><em><a href="{{ link }}">{{ post.title|censor|upper }}</a></em></h3>
+    <p></p>
+    <h4><em>{{ post.preview|censor }}</em></h4>
+</body>
+</html>

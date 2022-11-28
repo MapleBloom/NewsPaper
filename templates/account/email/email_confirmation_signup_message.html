@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email {{ user.email }} confirmation signup message</title>
+</head>
+<body>
+    {% load account %}
+    <h2>Thank you for registering, dear {{ user }}!</h2>
+    <p></p>
+    <h3>Please follow <a href="{{ activate_url }}">the link</a> to activate your account.</h3>
+</body>
+</html>

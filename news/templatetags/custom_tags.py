@@ -1,6 +1,7 @@
-from datetime import datetime
 from django import template
 from ..models import User
+from datetime import datetime
+
 
 register = template.Library()
 

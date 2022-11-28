@@ -13,10 +13,18 @@ User {{ user }} Profile
     <h6>Email: {{ user.email }}</h6>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    {% if perms.news.add_post %}
+    {% if perms.news.add_post and in_limit != 0 %}
         <h5>Looking for something fresh from You, dear {{ user.author }}</h5>
         <a href="/posts/create">
         <input type="submit" class="mt-3 btn-primary" value="Create post" /></a>
+        <p></p>
+        {% if in_limit == 1 %}
+            <h6>If you wish you could create one more post today.</h6>
+        {% else %}
+            <h6>If you wish you could create {{ in_limit }} more posts today.</h6>
+        {% endif %}
+    {% elif perms.news.add_post and in_limit == 0 %}
+        <h6>Today was a fruitful day, you have already published 3 posts.</h6>
     {% else %}
         <h5>Have something fresh to tell everybody?</h5>
         <h4>Fill out the form below to become an author &#128393;</h4>

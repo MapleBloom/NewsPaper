@@ -36,9 +36,18 @@ class Category(models.Model):
     ]
 
     category = models.CharField(max_length=2, choices=CATEGORIES, default='NW')
+    userCategory = models.ManyToManyField(User, through='UserCategory')
 
     def __str__(self):
         return f'{self.get_category_display()}'
+
+
+class UserCategory(models.Model):
+    userSubscribe = models.ForeignKey(User, on_delete=models.CASCADE)
+    categorySubscribe = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.userSubscribe} ~ {self.categorySubscribe}'
 
 
 class Post(models.Model):
@@ -75,7 +84,7 @@ class Post(models.Model):
         self.save()
 
     def preview(self):
-        return f'{self.text[:124]}...'
+        return f'{self.text[:50]}...'
 
     def getpost(self):
         return f'{self.get_post_display()}'
@@ -87,6 +96,7 @@ class PostCategory(models.Model):
 
     def __str__(self):
         return f'{self.category.get_category_display()} ~ {self.post.get_title()}'
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

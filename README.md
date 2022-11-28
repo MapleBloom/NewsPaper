@@ -19,6 +19,10 @@ Filtration and pagination at posts list, edit, update and delete post are realis
 
 Identification, authentication and authorization are applied.
 
+Signals, commands, logging, schedule.
+
+Sending e-mails.
+
 :arrow_up: [to content](README.md#Content)
 
 
@@ -36,6 +40,12 @@ Identification, authentication and authorization are applied.
 - Two different ways to register and log in: full and via e-mail/social account.
 - Add users to different groups via admin and registration. Exclusive permissions via admin and user upgrade.
 - Check user permissions at views and templates.
+<p> </p>
+
+- Registration with confirmation.
+- Sending e-mails by signals, by schedule.
+- Dynamic permissions.
+- Allauth library to sign in and log in.
 
 
 **Practice to**     
@@ -56,7 +66,12 @@ Identification, authentication and authorization are applied.
 - close add/change/delete views from users without permissions.
 - open navigation in templates for users with permissions only.
 - work with permissions at admin panel.
+<p> </p>
 
+- add subscribe/unsubscribe with e-mail confirmation.
+- filter events and subscribers.
+- add jobs, postponed and periodic jobs.
+- close, redirect irrelevant urls at views, templates and navigation.
 
 :arrow_up: [to content](README.md#Content)
 

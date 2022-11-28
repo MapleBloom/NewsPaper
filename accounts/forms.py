@@ -3,12 +3,21 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User, Group
 from django.core.exceptions import ValidationError
 from allauth.account.forms import SignupForm
+from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
 from news.models import Author
 
 
 class CustomSignupForm(SignupForm):
     def save(self, request):
         user = super().save(request)
+        commons = Group.objects.get(name="commons")
+        user.groups.add(commons)
+        return user
+
+
+class CustomSocialAccountAdapter(DefaultSocialAccountAdapter):
+    def save_user(self, request, sociallogin, form=None):
+        user = super().save_user(request, sociallogin)
         commons = Group.objects.get(name="commons")
         user.groups.add(commons)
         return user
