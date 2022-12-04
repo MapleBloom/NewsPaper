@@ -174,7 +174,14 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_EMAIL = os.getenv('EMAIL_HOST_EMAIL')
 DEFAULT_FROM_EMAIL = f'News Portal <{EMAIL_HOST_EMAIL}>'
 SERVER_EMAIL = f'News Portal <{EMAIL_HOST_EMAIL}>'
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 APSCHEDULER_RUN_NOW_TIMEOUT = 25
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Europe/Moscow'

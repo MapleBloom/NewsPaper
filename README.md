@@ -23,6 +23,9 @@ Signals, commands, logging, schedule.
 
 Sending e-mails.
 
+Synchronous and asynchronous task execution. Redis & Celery.
+Sending e-mails by schedule.
+
 :arrow_up: [to content](README.md#Content)
 
 
@@ -46,6 +49,10 @@ Sending e-mails.
 - Sending e-mails by signals, by schedule.
 - Dynamic permissions.
 - Allauth library to sign in and log in.
+<p> </p>
+
+- Asynchronous task to send email after event.
+- Raise the task and send email by schedule without main process interruption.
 
 
 **Practice to**     
@@ -72,6 +79,11 @@ Sending e-mails.
 - filter events and subscribers.
 - add jobs, postponed and periodic jobs.
 - close, redirect irrelevant urls at views, templates and navigation.
+<p> </p>
+
+- organize task queue on Redis server.
+- cope with task queue by Celery.
+
 
 :arrow_up: [to content](README.md#Content)
 
@@ -79,6 +91,7 @@ Sending e-mails.
 ### Data info
 No specific data required.
   
+
 :arrow_up: [to content](README.md#Content)
 
 
@@ -86,7 +99,6 @@ No specific data required.
 All input to Django Shell at [HomeWork_D2.txt](HomeWork_D2.txt) 
 
 [News Portal](http://127.0.0.1:8000/posts/) updated, new pages added.
-
 
 
 :arrow_up: [to content](README.md#Content)

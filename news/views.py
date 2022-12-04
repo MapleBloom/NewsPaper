@@ -1,17 +1,19 @@
 from django.conf import settings
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 # from django.shortcuts import render
 # from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views import View
 from .models import Post, Category
 from .filters import PostFilter, CategoryFilter
 from .forms import PostForm
 from .permissions import ChangePermissionRequiredMixin, CreatePermissionRequiredMixin
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
+from .tasks import new_post_message, send_something
 
 
 class PostsList(ListView):
@@ -127,7 +129,10 @@ class PostCreate(LoginRequiredMixin, CreatePermissionRequiredMixin, CreateView):
     def form_valid(self, form):
         newpost = form.save(commit=False)
         newpost.author = self.request.user.author
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        pk = form.instance.pk
+        new_post_message.delay(pk)
+        return response
 
 
 # def create_post(request):
@@ -154,3 +159,9 @@ class PostDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Post
     template_name = 'news/post_delete.html'
     success_url = reverse_lazy('post_list')
+
+
+class TryCeleryView(View):
+    def get(self, request):
+        send_something.delay()
+        return HttpResponse('Hello from celery!')
