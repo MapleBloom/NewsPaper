@@ -9,3 +9,4 @@ __pycache__/
 
 proba.py
 celery*
+!NewsPaper/celery.py
