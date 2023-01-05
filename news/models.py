@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models import Sum
 from datetime import datetime
 from django.urls import reverse
+from django.core.cache import cache
 
 
 class Author(models.Model):
@@ -15,11 +16,11 @@ class Author(models.Model):
     def update_rating(self):
         prt = self.post_set.aggregate(post_rating=Sum('rating'))
         post_rt = 0
-        post_rt += prt.get('post_rating')
+        post_rt += prt.get('post_rating') if prt.get('post_rating') else 0
 
         crt = self.userAuthor.comment_set.aggregate(comment_rating=Sum('rating'))
         comment_rt = 0
-        comment_rt += crt.get('comment_rating')
+        comment_rt += crt.get('comment_rating') if crt.get('comment_rating') else 0
 
         self.rating = post_rt * 3 + comment_rt
         self.save()
@@ -75,6 +76,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        cache.delete(f'post-{self.pk}')
+
     def like(self):
         self.rating += 1
         self.save()
@@ -88,6 +93,9 @@ class Post(models.Model):
 
     def getpost(self):
         return f'{self.get_post_display()}'
+
+    def date_in(self):
+        return self.time_in.date()
 
 
 class PostCategory(models.Model):
@@ -117,3 +125,6 @@ class Comment(models.Model):
     def dislike(self):
         self.rating -= 1
         self.save()
+
+    def date_in(self):
+        return self.time_in.date()

@@ -6,6 +6,7 @@ __pycache__/
 *.egg-info
 /env
 /.env
+cache_files/*
 
 proba.py
 celery*

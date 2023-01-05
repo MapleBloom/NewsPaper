@@ -26,6 +26,13 @@ Sending e-mails.
 Synchronous and asynchronous task execution. Redis & Celery.
 Sending e-mails by schedule.
 
+Caching.
+
+Custom commands for command line.
+
+Admin panel customization.
+
+
 :arrow_up: [to content](README.md#Content)
 
 
@@ -53,6 +60,11 @@ Sending e-mails by schedule.
 
 - Asynchronous task to send email after event.
 - Raise the task and send email by schedule without main process interruption.
+- Different scenarios of caching.
+<p> </p>
+
+- Custom console command via class Command.
+- Custom admin panel models views with fields to display, filters, search and additional actions.
 
 
 **Practice to**     
@@ -83,6 +95,13 @@ Sending e-mails by schedule.
 
 - organize task queue on Redis server.
 - cope with task queue by Celery.
+- cash temporary the whole view and parts of templates. 
+- cash object between savings. 
+<p> </p>
+
+- console command to show posts names by selected category.
+- admin panel model display: model fields and properties at the table, filters by category and other m2m, m2o fields, search by related fields.
+- action to add or diminish rating of post or comment with following author rating update.
 
 
 :arrow_up: [to content](README.md#Content)
@@ -100,12 +119,14 @@ All input to Django Shell at [HomeWork_D2.txt](HomeWork_D2.txt)
 
 [News Portal](http://127.0.0.1:8000/posts/) updated, new pages added.
 
+[Admin panel](http://127.0.0.1:8000/admin/) updated.
+
 
 :arrow_up: [to content](README.md#Content)
 
 
 ### Conclusions  
-....
+Django is a powerful instrument to compose browser apps with well done helpful documentation. You should spend time to get accustomed but it is worth.
 
 :arrow_up: [to content](README.md#Content)
 

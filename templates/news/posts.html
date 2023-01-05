@@ -2,6 +2,7 @@
 
 {% load custom_filters %}
 {% load custom_tags %}
+{% load cache %}
 
 {% block title %}
 Posts
@@ -12,7 +13,7 @@ Posts
     <!--<p>{{ time_now|date:'M d Y' }} today</p>-->
     <p>{% current_time '%b %d %Y %A' %} today</p>
     <h6>You see {{ posts|length }} out of {{ paginator.count }} publications at our portal</h6>
-    <h4> {{ next_publication|default_if_none:"Follow our agenda!" }} </h4>
+    {% cache 120 posts %}<h4> {{ next_publication|default_if_none:"Follow our agenda!" }} </h4>{% endcache %}
     <hr>
     <form action="" method="get">
             {% csrf_token %}

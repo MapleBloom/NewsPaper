@@ -11,6 +11,7 @@
             {% endblock title %}
         </title>
 
+        {% load cache %}
         {% load static %}
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
@@ -19,6 +20,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
+                {% cache 120 headerNP %}
                 <a class="navbar-brand" href="/admin/">News Portal</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarResponsive"
@@ -26,6 +28,7 @@
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                {% endcache %}
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 <!--                        <li class="nav-item active">-->
@@ -33,23 +36,27 @@
 <!--                                <span class="sr-only">(current)</span>-->
 <!--                            </a>-->
 <!--                        </li>-->
+                        {% cache 120 headerPC %}
                         <li class="nav-item">
                             <a class="nav-link" href="/posts/">Posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/posts/posts-by-category">by Category</a>
                         </li>
+                        {% endcache %}
                         {% if perms.news.add_post and in_limit != 0 %}
                         <li class="nav-item">
                             <a class="nav-link" href="/posts/create">Create post</a>
                         </li>
                         {% endif %}
+                        {% cache 120 headerAC %}
                         <li class="nav-item">
                             <a class="nav-link" href="/about/">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/contact/">Contact</a>
                         </li>
+                        {% endcache %}
 <!--                        <li class="nav-item">-->
 <!--                            <a class="nav-link" href="/accounts/signup">Registration</a>-->
 <!--                        </li>-->

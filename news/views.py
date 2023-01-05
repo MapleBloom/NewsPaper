@@ -14,6 +14,7 @@ from .permissions import ChangePermissionRequiredMixin, CreatePermissionRequired
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from .tasks import new_post_message, send_something
+from django.core.cache import cache
 
 
 class PostsList(ListView):
@@ -40,6 +41,15 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'news/post.html'
     context_object_name = 'post'
+
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None)
+        print('get from cashe: ', obj)
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            print('set to cashe: ', obj)
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+        return obj
 
 
 class PostsByCategory(ListView):
@@ -131,7 +141,7 @@ class PostCreate(LoginRequiredMixin, CreatePermissionRequiredMixin, CreateView):
         newpost.author = self.request.user.author
         response = super().form_valid(form)
         pk = form.instance.pk
-        new_post_message.delay(pk)
+        # new_post_message.delay(pk)                 uncomment to send e-mails about new post
         return response
 
 
