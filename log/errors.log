@@ -1,0 +1,258 @@
+2023-01-21 08:18:29 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001D11D5E7140>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 08:18:29 | ERROR | "GET /posts/ HTTP/1.1" 500 145 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 08:28:41 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001D11D7ACE40>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 08:28:41 | ERROR | "GET /posts/ HTTP/1.1" 500 145 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 08:34:15 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001D11D7612C0>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 08:34:15 | ERROR | "GET /posts/ HTTP/1.1" 500 145 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 08:42:48 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001FFA38FB900>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 08:42:48 | ERROR | "GET /posts/ HTTP/1.1" 500 145 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 08:44:50 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x00000223AB1E8CC0>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 08:44:50 | ERROR | "GET /posts/ HTTP/1.1" 500 145 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 08:54:22 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001C0D073B600>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 08:54:22 | ERROR | "GET /posts/ HTTP/1.1" 500 145 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 08:56:47 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001C0D0931300>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 08:56:47 | ERROR | "GET /posts/ HTTP/1.1" 500 145 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 17:58:50 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x0000014658EE5400>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 17:58:51 | ERROR | "GET /posts/ HTTP/1.1" 500 145 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 19:06:10 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001C3BA628E00>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 19:06:10 | ERROR | "GET /posts/ HTTP/1.1" 500 89349 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 20:21:35 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x00000205BD7FAF00>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 20:21:35 | ERROR | "GET /posts/ HTTP/1.1" 500 89902 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 20:23:42 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x00000205BD81E380>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 20:23:42 | ERROR | "GET /posts/ HTTP/1.1" 500 89902 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-21 20:25:48 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 20:25:48 | ERROR | "GET /posts/ HTTP/1.1" 500 89826 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py
+2023-01-21 20:27:10 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001BD5CB09600>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 40, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-21 20:27:10 | ERROR | "GET /posts/ HTTP/1.1" 500 89918 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None

@@ -1,0 +1,94 @@
+
+2023-01-21 08:05:16 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:05:27 | INFO | basehttp | "GET /contact/ HTTP/1.1" 200 3789
+2023-01-21 08:05:37 | INFO | basehttp | "GET /about/ HTTP/1.1" 200 3874
+2023-01-21 08:05:43 | INFO | basehttp | "GET /posts/ HTTP/1.1" 200 7522
+2023-01-21 08:06:04 | INFO | basehttp | "GET /posts/?csrfmiddlewaretoken=ACZKljJTk8KHsd07G4dnefJK9nUjr0QkDOZJa1cq0uDkVxnTuLvC5YDeGq12sApx&title__icontains=&post=N&time_in=&author=8 HTTP/1.1" 200 7977
+2023-01-21 08:06:19 | INFO | basehttp | "GET /posts/25 HTTP/1.1" 200 4394
+2023-01-21 08:06:36 | INFO | basehttp | "GET /posts/create HTTP/1.1" 200 4996
+2023-01-21 08:06:50 | INFO | basehttp | "GET /simpleaccounts/logout HTTP/1.1" 301 0
+2023-01-21 08:06:50 | INFO | basehttp | "GET /simpleaccounts/logout/ HTTP/1.1" 200 809
+2023-01-21 08:06:59 | INFO | basehttp | "POST /simpleaccounts/logout/ HTTP/1.1" 302 0
+2023-01-21 08:06:59 | INFO | basehttp | "GET /simpleaccounts/login HTTP/1.1" 301 0
+2023-01-21 08:06:59 | INFO | basehttp | "GET /simpleaccounts/login/ HTTP/1.1" 200 1850
+2023-01-21 08:09:33 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:09:34 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:10:11 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:10:12 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:12:46 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:16:40 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:17:53 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py changed, reloading.
+2023-01-21 08:17:54 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:37:59 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:42:15 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:42:16 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:42:48 | ERROR | basehttp | "GET /posts/ HTTP/1.1" 500 145
+2023-01-21 08:44:21 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:44:22 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:44:35 | INFO | basehttp | "GET /contact/ HTTP/1.1" 200 3427
+2023-01-21 08:44:43 | INFO | basehttp | "GET /about/ HTTP/1.1" 200 3512
+2023-01-21 08:44:50 | ERROR | basehttp | "GET /posts/ HTTP/1.1" 500 145
+2023-01-21 08:45:05 | INFO | basehttp | "GET /posts/1 HTTP/1.1" 200 3763
+2023-01-21 08:49:57 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:49:58 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:51:42 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:51:43 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:52:13 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:52:14 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:52:37 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:52:38 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:53:53 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 08:53:54 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:53:57 | INFO | basehttp | "GET /about/ HTTP/1.1" 200 3512
+2023-01-21 08:54:22 | ERROR | basehttp | "GET /posts/ HTTP/1.1" 500 145
+2023-01-21 08:54:45 | INFO | basehttp | "GET /simpleaccounts/login/ HTTP/1.1" 200 1712
+2023-01-21 08:55:23 | INFO | basehttp | "POST /simpleaccounts/login/ HTTP/1.1" 200 1851
+2023-01-21 08:56:47 | INFO | basehttp | "POST /simpleaccounts/login/ HTTP/1.1" 302 0
+2023-01-21 08:56:47 | INFO | basehttp | "GET /posts HTTP/1.1" 301 0
+2023-01-21 08:56:47 | ERROR | basehttp | "GET /posts/ HTTP/1.1" 500 145
+2023-01-21 08:57:29 | INFO | basehttp | "GET /posts/1 HTTP/1.1" 200 4125
+2023-01-21 08:59:01 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py changed, reloading.
+2023-01-21 08:59:02 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 08:59:20 | INFO | basehttp | "GET /posts/ HTTP/1.1" 200 7389
+2023-01-21 08:59:37 | INFO | basehttp | "GET /posts/?title__icontains=&post=&time_in=&author=&category=2 HTTP/1.1" 200 7392
+2023-01-21 09:00:32 | INFO | basehttp | "GET /posts/?title__icontains=&post=&time_in=&author=&category=4 HTTP/1.1" 200 7639
+2023-01-21 09:01:07 | INFO | basehttp | "GET /posts/?csrfmiddlewaretoken=UJEjZIzaggtzb7vEcu2ecXuobwrs0QJuEeIypkHhzU87UJEZxOcqPwIBZtmW2qaO&title__icontains=&post=&time_in=&author=&category=3 HTTP/1.1" 200 7602
+2023-01-21 09:03:47 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 09:03:48 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 09:04:31 | INFO | basehttp | "GET /posts/ HTTP/1.1" 200 7389
+2023-01-21 09:04:47 | INFO | basehttp | "GET /posts/?title__icontains=&post=&time_in=&author=&category=3 HTTP/1.1" 200 7380
+2023-01-21 09:07:55 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 09:07:56 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 09:08:07 | INFO | basehttp | "GET /posts/ HTTP/1.1" 200 7389
+2023-01-21 09:08:24 | INFO | basehttp | "GET /posts/?title__icontains=&post=&time_in=&author=&category=3 HTTP/1.1" 200 7380
+2023-01-21 09:11:51 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 17:33:47 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 17:33:54 | INFO | basehttp | "GET /posts/ HTTP/1.1" 200 7389
+2023-01-21 17:35:12 | INFO | basehttp | "GET /posts/63 HTTP/1.1" 200 4319
+2023-01-21 17:35:42 | WARNING | basehttp | "GET /posts/63/update HTTP/1.1" 403 3831
+2023-01-21 17:50:08 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 17:50:09 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 17:52:25 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 17:52:26 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 17:56:29 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 17:56:30 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 17:57:47 | WARNING | basehttp | "GET /posts/63/update HTTP/1.1" 403 3831
+2023-01-21 17:58:13 | INFO | basehttp | "GET /posts/ HTTP/1.1" 200 7389
+2023-01-21 17:58:13 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py changed, reloading.
+2023-01-21 17:58:14 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 17:58:51 | ERROR | basehttp | "GET /posts/ HTTP/1.1" 500 145
+2023-01-21 18:21:19 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
+2023-01-21 18:21:20 | INFO | autoreload | Watching for file changes with StatReloader
+2023-01-21 18:21:43 | ERROR | exception | Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\http\request.py", line 148, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2023-01-21 18:21:43 | WARNING | basehttp | "GET /posts/1 HTTP/1.1" 400 143
+2023-01-21 18:36:06 | INFO | autoreload | C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\NewsPaper\settings.py changed, reloading.
