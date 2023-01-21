@@ -1,10 +1,14 @@
 # [Django Project NewsPaper](http://127.0.0.1:8000/posts/)
 ## [Skillfactory](https://skillfactory.ru) FPW homework
 
+Web-application example to show [Django framework](https://docs.djangoproject.com/en/4.1/intro/install/) possibilities.
+
+<p> </p>
+
 ## Content  
 [1. Description](README.md#Description)  
 [2. Case to solve](README.md#Case-to-solve)  
-[3. Data info](README.md#Data-info)  
+[3. Quick start](README.md#Quick-start)  
 [5. Result](README.md#Result)    
 [6. Conclusions](README.md#Conclusions) 
 
@@ -26,11 +30,13 @@ Sending e-mails.
 Synchronous and asynchronous task execution. Redis & Celery.
 Sending e-mails by schedule.
 
-Caching.
+Cashing.
 
 Custom commands for command line.
 
 Admin panel customization.
+
+Customize logs at settings.py
 
 
 :arrow_up: [to content](README.md#Content)
@@ -60,11 +66,15 @@ Admin panel customization.
 
 - Asynchronous task to send email after event.
 - Raise the task and send email by schedule without main process interruption.
-- Different scenarios of caching.
+- Different scenarios of cashing.
 <p> </p>
 
 - Custom console command via class Command.
 - Custom admin panel models views with fields to display, filters, search and additional actions.
+<p> </p>
+
+- Send logs at console, files, e-mail depending on levels and loggers.
+<p> </p>
 
 
 **Practice to**     
@@ -102,14 +112,58 @@ Admin panel customization.
 - console command to show posts names by selected category.
 - admin panel model display: model fields and properties at the table, filters by category and other m2m, m2o fields, search by related fields.
 - action to add or diminish rating of post or comment with following author rating update.
+<p> </p>
+
+- customize logs records at settings.py dictionary describing loggers, handlers, filters and formatters.
+- filter events by level to adjust formatting at handlers. 
+<p> </p>
 
 
 :arrow_up: [to content](README.md#Content)
 
 
-### Data info
-No specific data required.
-  
+### Quick start
+Platform-depending options and libraries (like Celery) are adjusted to Windows.
+
+Clone repository 
+```bash
+git clone https://github.com/MapleBloom/NewsPaper.git
+```
+
+At the upper NewsPaper directory create, start and adjust virtual environment
+```bash
+python -m venv npvenv
+npvenv\scripts\activate
+pip install -r requirements.txt
+```
+
+Generate Django secret-key
+```bash
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
+
+At the inner NewsPaper directory (project dir) add venv/settings.env file for private settings 
+```python
+SECRET_KEY = ''
+
+EMAIL_HOST = ''            # mail server address
+EMAIL_PORT =               # smtp port of server
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_EMAIL = ''
+```  
+E-mail data should be filled for send-email functions.
+
+Start server
+```bash
+python manage.py runserver
+```
+
+Main page works at url http://127.0.0.1:8000/posts/
+
+[News Portal](http://127.0.0.1:8000/posts/)
+<p> </p>
+<p> </p>
 
 :arrow_up: [to content](README.md#Content)
 
@@ -126,7 +180,8 @@ All input to Django Shell at [HomeWork_D2.txt](HomeWork_D2.txt)
 
 
 ### Conclusions  
-Django is a powerful instrument to compose browser apps with well done helpful documentation. You should spend time to get accustomed but it is worth.
+Django is a powerful instrument to compose browser apps with well done helpful documentation. You should spend time to get accustomed, but it worth.
+
 
 :arrow_up: [to content](README.md#Content)
 

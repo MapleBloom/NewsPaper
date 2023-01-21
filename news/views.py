@@ -15,6 +15,9 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from .tasks import new_post_message, send_something
 from django.core.cache import cache
+# import logging
+
+# logger = logging.getLogger(__name__)
 
 
 class PostsList(ListView):
@@ -22,7 +25,7 @@ class PostsList(ListView):
     ordering = '-time_in'
     template_name = 'news/posts.html'
     context_object_name = 'posts'
-    paginate_by = 2
+    paginate_by = 4
 
     def get_queryset(self):
         queryset = super().get_queryset()

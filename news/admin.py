@@ -7,10 +7,8 @@ def rating_up(modeladmin, request, queryset): # request — инфо о запр
         q.like()
         if hasattr(q, 'user'):
             q.user.author.update_rating()
-            print(q.rating, q.user.author, q.user.author.rating)
         elif hasattr(q, 'author'):
             q.author.update_rating()
-            print(q.rating, q.author, q.author.rating)
 
 
 def rating_down(modeladmin, request, queryset):
@@ -18,10 +16,8 @@ def rating_down(modeladmin, request, queryset):
         q.dislike()
         if hasattr(q, 'user'):
             q.user.author.update_rating()
-            print(q.rating, q.user.author, q.user.author.rating)
         elif hasattr(q, 'author'):
             q.author.update_rating()
-            print(q.rating, q.author, q.author.rating)
 
 
 rating_up.short_description = 'rating + 1'
