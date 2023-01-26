@@ -7,14 +7,16 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views import View
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.core.cache import cache
+from django.utils.translation import gettext as _
+
 from .models import Post, Category
 from .filters import PostFilter, CategoryFilter
 from .forms import PostForm
 from .permissions import ChangePermissionRequiredMixin, CreatePermissionRequiredMixin
-from django.core.mail import send_mail, EmailMultiAlternatives
-from django.template.loader import render_to_string
 from .tasks import new_post_message, send_something
-from django.core.cache import cache
 # import logging
 
 # logger = logging.getLogger(__name__)
@@ -36,7 +38,7 @@ class PostsList(ListView):
         context = super().get_context_data(**kwargs)
         # context['time_now'] = datetime.utcnow()  Now use tag instead
         context['filterset'] = self.filterset
-        context['next_publication'] = None
+        context['next_publication'] = None    # _('Next publication is coming soon!')
         return context
 
 

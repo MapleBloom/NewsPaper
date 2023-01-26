@@ -2,34 +2,36 @@
 
 {% load custom_filters %}
 {% load custom_tags %}
+{% load i18n %}
 
 {% block title %}
-Posts by Category
+{% trans "Posts by Category" %}
 {% endblock title %}
  
 {% block content %}
-    <h2>Our publications</h2>
-    <p>{% current_time '%b %d %Y %A' %} today</p>
-    <h5>Category to deep into:</h5>
+    <h2>{% trans "Our publications" %}</h2>
+    <p>{% current_time '%b %d %Y %A' %} {% trans "today" %}</p>
+    <h5>{% trans "Category to deep into" %}:</h5>
     <form action="" method="get">
             {% csrf_token %}
             {{ filterset.form.as_p }}
-            <input type="submit" class="mt-3 btn-primary" value="Deep into" />
+                {% trans "Deep into" as deep %}
+            <input type="submit" class="mt-3 btn-primary" value="{{ deep }}" />
     </form>
     <hr>
     {% if cat %}
-    <h5>You see {{ posts|length }} out of {{ paginator.count }} publications at '{{ cat }}' category</h5>
+    <h5>{% trans "You see" %} {{ posts|length }} {% trans "out of" %} {{ paginator.count }} {% blocktranslate %}publications at '{{ cat }}' category{% endblocktranslate %}</h5>
     {% endif %}
     {% if posts %}
         <center><table>
             <tr>
-                <td>News/Article</td>
-                <td>Title</td>
-                <td>Publication date</td>
-                <td>Shorts</td>
-                <td>Likes</td>
+                <td>{% trans "News/Article" %}</td>
+                <td>{% trans "Title" %}</td>
+                <td>{% trans "Publication date" %}</td>
+                <td>{% trans "Shorts" %}</td>
+                <td>{% trans "Likes" %}</td>
                 {% if perms.news.change_post or perms.news.delete_post %}
-                <td>Action</td>
+                <td>{% trans "Action" %}</td>
                 {% endif %}
             </tr>
             {% for post in posts %}
@@ -43,19 +45,21 @@ Posts by Category
                     {% if post.author %}
                     {% if perms.news.change_post and post.author and user == post.author.userAuthor %}
                     <a href="{% url 'post_update' pk=post.id %}">
-                    <input type="submit" class="mt-3 btn-primary" value="Update" /></a>
+                        {% trans "Update" as update %}
+                    <input type="submit" class="mt-3 btn-primary" value="{{ update }}" /></a>
                     {% endif %}
                     {% endif %}
                     {% if perms.news.delete_post %}
                     <a href="{% url 'post_delete' pk=post.id %}">
-                    <input type="submit" class="mt-3 btn-primary" value="Delete" /></a>
+                        {% trans "Delete" as delete %}
+                    <input type="submit" class="mt-3 btn-primary" value="{{ delete }}" /></a>
                     {% endif %}
                 </td>
             </tr>
             {% endfor %}
         </table></center>
     {% else %}
-        <h2>No news are good news!</h2>
+        <h2>{% trans "No news are good news" %}!</h2>
     {% endif %}
     {% if page_obj.has_previous %}
         <a href="?{% url_replace page=1 %}">1</a>
@@ -78,19 +82,22 @@ Posts by Category
     {% endif %}
     <hr>
     {% if cat and not is_subscriber %}
-        <h5>Follow publications at '{{ cat }}' category
+        <h5>{% blocktranslate %}Follow publications at '{{ cat }}' category{% endblocktranslate %}
         {% if request.user.is_authenticated %}
             <a href="{% url 'subscribe' cat.id %}?next={{request.path}}?category={{cat.id}}">
-            <input type="submit" class="mt-3 btn-primary" value="Follow" /></a>
+                {% trans "Follow" as follow %}
+            <input type="submit" class="mt-3 btn-primary" value="{{ follow }}" /></a>
         {% else %}
             <a href="{% url 'account_login' %}?next={{request.path}}?category={{cat.id}}">
-            <input type="submit" class="mt-3 btn-primary" value="Log in" /></a>
+                {% trans "Log in" as log_in %}
+            <input type="submit" class="mt-3 btn-primary" value="{{ log_in }}" /></a>
         {% endif %}
         </h5>
     {% endif %}
     {% if is_subscriber %}
-        <h5>You are subscribed to follow '{{ cat }}' category
+        <h5>{% blocktranslate %}You are subscribed to follow '{{ cat }}' category{% endblocktranslate %}
         <a href="{% url 'unsubscribe' cat.id %}?next={{request.path}}?category={{cat.id}}">
-        <input type="submit" class="mt-3 btn-primary" value="Not follow" /></a></h5>
+            {% trans "Not follow" as not_follow %}
+        <input type="submit" class="mt-3 btn-primary" value="{{ not_follow }}" /></a></h5>
     {% endif %}
 {% endblock content %}

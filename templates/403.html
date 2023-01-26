@@ -1,4 +1,5 @@
 {% extends 'flatpages/default.html' %}
+{% load i18n %}
 
 {% block title %}
 403 error
@@ -8,5 +9,5 @@
     <h2>403 error</h2>
     <hr>
     <p>&nbsp;</p>
-    <h5><em>It seems you have no permission to visit this page...</em></h5>
+    <h5><em>{% trans "It seems you have no permission to visit this page" %}...</em></h5>
 {% endblock content %}

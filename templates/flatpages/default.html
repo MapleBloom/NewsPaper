@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+{% load i18n %}
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -36,25 +39,25 @@
 <!--                                <span class="sr-only">(current)</span>-->
 <!--                            </a>-->
 <!--                        </li>-->
-                        {% cache 120 headerPC %}
+                        {% cache 10 headerPC %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts/">Posts</a>
+                            <a class="nav-link" href="/posts/">{% trans "Posts" %}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts/posts-by-category">by Category</a>
+                            <a class="nav-link" href="/posts/posts-by-category">{% trans "by Category" %}</a>
                         </li>
                         {% endcache %}
                         {% if perms.news.add_post and in_limit != 0 %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts/create">Create post</a>
+                            <a class="nav-link" href="/posts/create">{% trans "Create post" %}</a>
                         </li>
                         {% endif %}
-                        {% cache 120 headerAC %}
+                        {% cache 10 headerAC %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/about/">About</a>
+                            <a class="nav-link" href="/about/">{% trans "About" %}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/contact/">Contact</a>
+                            <a class="nav-link" href="/contact/">{% trans "Contact" %}</a>
                         </li>
                         {% endcache %}
 <!--                        <li class="nav-item">-->
@@ -69,17 +72,34 @@
                     <ul class="navbar-nav ml-auto">
                         {% if not user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" href="/simpleaccounts/login">Simple Log in</a>
+                                <a class="nav-link" href="/simpleaccounts/login">{% trans "Simple Log in" %}</a>
                             </li>
                         {% endif %}
                         {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'profile_user' pk=user.id %}">Profile</a>
+                                <a class="nav-link" href="{% url 'profile_user' pk=user.id %}">{% trans "Profile" %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/simpleaccounts/logout">Log out</a>
+                                <a class="nav-link" href="/simpleaccounts/logout">{% trans "Log out" %}</a>
                             </li>
                         {% endif %}
+                            <li class="nav-item">
+                                <form action="{% url 'set_language' %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="next" value="{{ redirect_to }}">
+                                    <select name="language" id="">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% get_language_info_list for LANGUAGES as languages %}
+                                        {% for language in languages %}
+                                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                                                {{ language.name_local }} - {{ language.code }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <input type="submit" value=">>">
+                                </form>
+                            </li>
                     </ul>
                 </div>
             </div>

@@ -73,7 +73,7 @@ Customize logs at settings.py
 - Custom admin panel models views with fields to display, filters, search and additional actions.
 <p> </p>
 
-- Send logs at console, files, e-mail depending on levels and loggers.
+- Send logs to console, files, e-mail depending on levels and loggers.
 <p> </p>
 
 

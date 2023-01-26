@@ -3,34 +3,37 @@
 {% load custom_filters %}
 {% load custom_tags %}
 {% load cache %}
+{% load i18n %}
 
 {% block title %}
-Posts
+{% trans "Posts" %}
 {% endblock title %}
  
 {% block content %}
-    <h2>Our publications</h2>
+    <h2>{% trans "Our publications" %}</h2>
     <!--<p>{{ time_now|date:'M d Y' }} today</p>-->
-    <p>{% current_time '%b %d %Y %A' %} today</p>
-    <h6>You see {{ posts|length }} out of {{ paginator.count }} publications at our portal</h6>
-    {% cache 120 posts %}<h4> {{ next_publication|default_if_none:"Follow our agenda!" }} </h4>{% endcache %}
+    <p>{% current_time '%b %d %Y %A' %} {% trans "today" %}</p>
+    <h6>{% trans "You see" %} {{ posts|length }} {% trans "out of" %} {{ paginator.count }} {% trans "publications at our portal" %}</h6>
+        {% trans "Follow our agenda!" as if_none %}
+    {% cache 10 posts %}<h4> {{ next_publication|default_if_none:if_none }} </h4>{% endcache %}
     <hr>
     <form action="" method="get">
             {% csrf_token %}
             {{ filterset.form.as_p }}
-            <input type="submit" class="mt-3 btn-primary" value="Search" />
+                {% trans "Search" as search %}
+            <input type="submit" class="mt-3 btn-primary" value="{{ search }}" />
     </form>
     <hr>
     {% if posts %}
         <center><table>
             <tr>
-                <td>News/Article</td>
-                <td>Title</td>
-                <td>Publication date</td>
-                <td>Shorts</td>
-                <td>Likes</td>
+                <td>{% trans "News/Article" %}</td>
+                <td>{% trans "Title" %}</td>
+                <td>{% trans "Publication date" %}</td>
+                <td>{% trans "Shorts" %}</td>
+                <td>{% trans "Likes" %}</td>
                 {% if perms.news.change_post or perms.news.delete_post %}
-                <td>Action</td>
+                <td>{% trans "Action" %}</td>
                 {% endif %}
             </tr>
             {% for post in posts %}
@@ -43,18 +46,20 @@ Posts
                 <td>
                     {% if perms.news.change_post and user == post.author.userAuthor %}
                     <a href="{% url 'post_update' pk=post.id %}">
-                    <input type="submit" class="mt-3 btn-primary" value="Update" /></a>
+                        {% trans "Update" as update %}
+                    <input type="submit" class="mt-3 btn-primary" value="{{ update }}" /></a>
                     {% endif %}
                     {% if perms.news.delete_post %}
                     <a href="{% url 'post_delete' pk=post.id %}">
-                    <input type="submit" class="mt-3 btn-primary" value="Delete" /></a>
+                        {% trans "Delete" as delete %}
+                    <input type="submit" class="mt-3 btn-primary" value="{{ delete }}" /></a>
                     {% endif %}
                 </td>
             </tr>
             {% endfor %}
         </table></center>
     {% else %}
-        <h2>No news are good news!</h2>
+        <h2>{% trans "No news are good news" %}!</h2>
     {% endif %}
     {% if page_obj.has_previous %}
         <a href="?{% url_replace page=1 %}">1</a>
