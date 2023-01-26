@@ -256,3 +256,796 @@ ZeroDivisionError: division by zero
 2023-01-21 20:27:10 | ERROR | "GET /posts/ HTTP/1.1" 500 89918 |
 C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
 None
+2023-01-22 23:44:21 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'cycle' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filters\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x0000027E1136A040>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'cycle'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'cycle' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filters
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+2023-01-22 23:44:21 | ERROR | "GET /posts/ HTTP/1.1" 500 228717 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-23 00:02:15 | ERROR | Internal Server Error: /posts/63 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'for' statements should use the format 'for x in y': for i in (1, 2, 3)"), <traceback object at 0x00000151BA796E00>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 840, in do_for
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'for' statements should use the format 'for x in y': for i in (1, 2, 3)
+2023-01-23 00:02:15 | ERROR | "GET /posts/63 HTTP/1.1" 500 185381 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-23 00:03:29 | ERROR | Internal Server Error: /posts/44 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'TypeError'>, TypeError("'Post' object is not iterable"), <traceback object at 0x00000151BA7BB100>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+TypeError: 'Post' object is not iterable
+2023-01-23 00:03:29 | ERROR | "GET /posts/44 HTTP/1.1" 500 153813 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-23 00:10:09 | ERROR | Internal Server Error: /posts/1 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'TypeError'>, TypeError("'ManyRelatedManager' object is not iterable"), <traceback object at 0x00000151BA759A00>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+TypeError: 'ManyRelatedManager' object is not iterable
+2023-01-23 00:10:09 | ERROR | "GET /posts/1 HTTP/1.1" 500 154251 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-23 00:10:37 | ERROR | Internal Server Error: /posts/1 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'TypeError'>, TypeError("'ManyRelatedManager' object is not iterable"), <traceback object at 0x00000151BA78C940>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+TypeError: 'ManyRelatedManager' object is not iterable
+2023-01-23 00:10:37 | ERROR | "GET /posts/1 HTTP/1.1" 500 154388 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-23 00:38:46 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x00000151BA85ACC0>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2023-01-23 00:38:46 | ERROR | "GET /posts/ HTTP/1.1" 500 152395 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-23 05:45:59 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('default_if_none requires 2 arguments, 1 provided'), <traceback object at 0x0000021280BCCC80>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\templatetags\cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 699, in __init__
+    self.args_check(filter_name, filter_func, args)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 761, in args_check
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: default_if_none requires 2 arguments, 1 provided
+2023-01-23 05:45:59 | ERROR | "GET /posts/ HTTP/1.1" 500 302460 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-23 05:52:00 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('default_if_none requires 2 arguments, 1 provided'), <traceback object at 0x0000022F8A03F140>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\templatetags\cache.py", line 84, in do_cache
+    nodelist = parser.parse(("endcache",))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 699, in __init__
+    self.args_check(filter_name, filter_func, args)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 761, in args_check
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: default_if_none requires 2 arguments, 1 provided
+2023-01-23 05:52:00 | ERROR | "GET /posts/ HTTP/1.1" 500 302976 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-25 01:34:17 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x00000210780C4540>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 41, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-25 01:34:17 | ERROR | "GET /posts/ HTTP/1.1" 500 85812 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-25 01:38:25 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x0000017AB5646800>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 41, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-25 01:38:25 | ERROR | "GET /posts/ HTTP/1.1" 500 85994 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-25 17:06:00 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x00000223D8F1BDC0>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 41, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-25 17:06:00 | ERROR | "GET /posts/ HTTP/1.1" 500 86471 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-25 17:06:34 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x00000223D9182680>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 41, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-25 17:06:34 | ERROR | "GET /posts/ HTTP/1.1" 500 86467 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-25 17:14:50 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x00000223D8F9A080>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 41, in get_context_data
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-25 17:14:50 | ERROR | "GET /posts/ HTTP/1.1" 500 86467 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+E: 2023-01-26 03:22:17 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'order_by'"), <traceback object at 0x00000290907E6F80>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 33, in get_queryset
+    queryset.order_by('-time_in')
+AttributeError: 'tuple' object has no attribute 'order_by'
+E: 2023-01-26 03:22:17 | ERROR | "GET /posts/ HTTP/1.1" 500 86616 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+E: 2023-01-26 03:26:15 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x000001E657A014C0>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+E: 2023-01-26 03:26:15 | ERROR | "GET /posts/ HTTP/1.1" 500 91746 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+E: 2023-01-26 03:26:20 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x000001E657816100>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+E: 2023-01-26 03:26:20 | ERROR | "GET /posts/ HTTP/1.1" 500 91746 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+E: 2023-01-26 03:26:27 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x000001E6578A4680>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+E: 2023-01-26 03:26:27 | ERROR | "GET /posts/ HTTP/1.1" 500 91609 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+E: 2023-01-26 03:27:06 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x000001E657A4DF40>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+E: 2023-01-26 03:27:06 | ERROR | "GET /posts/ HTTP/1.1" 500 91611 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+E: 2023-01-26 03:29:10 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x0000014C57F7E540>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+E: 2023-01-26 03:29:10 | ERROR | "GET /posts/ HTTP/1.1" 500 91748 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+E: 2023-01-26 03:32:46 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x0000014C581183C0>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+E: 2023-01-26 03:32:46 | ERROR | "GET /posts/ HTTP/1.1" 500 91615 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+E: 2023-01-26 03:36:03 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x0000028523E02600>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+E: 2023-01-26 03:36:03 | ERROR | "GET /posts/ HTTP/1.1" 500 91452 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-26 03:44:46 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x000001A6480EE400>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+2023-01-26 03:44:46 | ERROR | "GET /posts/ HTTP/1.1" 500 91495 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-26 03:48:09 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x0000020417DB0380>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+2023-01-26 03:48:09 | ERROR | "GET /posts/ HTTP/1.1" 500 91347 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-26 04:06:09 | ERROR | Internal Server Error: /posts/posts-by-category |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x00000210CBA85480>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 69, in get_queryset
+    a = 1 / 0
+ZeroDivisionError: division by zero
+2023-01-26 04:06:09 | ERROR | "GET /posts/posts-by-category HTTP/1.1" 500 86526 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-26 04:07:49 | ERROR | Internal Server Error: /posts/ |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'AttributeError'>, AttributeError("'tuple' object has no attribute 'model'"), <traceback object at 0x00000170E2843540>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Marina\test_Projects\Django_Projects\NewsPaper_dir\news\views.py", line 34, in get_queryset
+    self.filterset = PostFilter(self.request.GET, queryset)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django_filters\filterset.py", line 176, in __init__
+    model = queryset.model
+AttributeError: 'tuple' object has no attribute 'model'
+2023-01-26 04:07:49 | ERROR | "GET /posts/ HTTP/1.1" 500 91496 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
