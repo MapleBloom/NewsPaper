@@ -1049,3 +1049,119 @@ AttributeError: 'tuple' object has no attribute 'model'
 2023-01-26 04:07:49 | ERROR | "GET /posts/ HTTP/1.1" 500 91496 |
 C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
 None
+2023-01-28 00:31:56 | ERROR | Internal Server Error: /posts/51 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Could not parse the remainder: '(id=user.id).username' from 'User.objects.get(id=user.id).username'"), <traceback object at 0x00000239429E10C0>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 954, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(id=user.id).username' from 'User.objects.get(id=user.id).username'
+2023-01-28 00:31:56 | ERROR | "GET /posts/51 HTTP/1.1" 500 217245 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None
+2023-01-28 00:32:59 | ERROR | Internal Server Error: /posts/51 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Could not parse the remainder: '(id_user.id).username' from 'User.objects.get(id_user.id).username'"), <traceback object at 0x0000023942872600>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\defaulttags.py", line 954, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(id_user.id).username' from 'User.objects.get(id_user.id).username'
+2023-01-28 00:32:59 | ERROR | "GET /posts/51 HTTP/1.1" 500 217245 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None

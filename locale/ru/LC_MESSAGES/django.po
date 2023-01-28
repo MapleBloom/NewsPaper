@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-23 05:50+0300\n"
+"POT-Creation-Date: 2023-01-28 06:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +20,121 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: .\accounts\forms.py:31 .\accounts\forms.py:63
+msgid "first_name"
+msgstr "имя"
+
+#: .\accounts\forms.py:32 .\accounts\forms.py:64
+msgid "last_name"
+msgstr "фамилия"
+
+#: .\accounts\forms.py:33 .\accounts\forms.py:62
+msgid "username"
+msgstr "никнейм"
+
+#: .\accounts\forms.py:34 .\accounts\forms.py:65
+msgid "email"
+msgstr "е-мейл"
+
+#: .\accounts\forms.py:42
+msgid "This field should be filled"
+msgstr "Это поле должно быть заполнено"
+
+#: .\accounts\forms.py:56 .\templates\accounts\profile_user.html:14
+msgid "Email"
+msgstr "Е-мейл"
+
+#: .\accounts\forms.py:57 .\templates\accounts\profile_user.html:16
+msgid "First name"
+msgstr "Имя"
+
+#: .\accounts\forms.py:58 .\templates\accounts\profile_user.html:19
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\accounts\forms.py:66
+msgid "password1"
+msgstr "пароль1"
+
+#: .\accounts\forms.py:67
+msgid "password2"
+msgstr "пароль2"
+
 #: .\flatpages\admin.py:11
 msgid "Advanced options"
 msgstr "Дополнительные возможности"
 
-#: .\news\views.py:40
-msgid "Next publication is coming soon!"
-msgstr "Следующая публикация ожидается вскоре!"
+#: .\news\filters.py:13
+msgid "Publication date from"
+msgstr "Дата публикации с"
+
+#: .\news\filters.py:23
+msgid "Author"
+msgstr "Автор"
+
+#: .\news\filters.py:30 .\news\forms.py:19 .\templates\news\post.html:13
+msgid "Category"
+msgstr "Категория"
+
+#: .\news\forms.py:27
+msgid "Meaningless publication under 20 symbols demands upgrade."
+msgstr "Бессмысленная публикация менее 20 символов должна быть переписана."
+
+#: .\news\forms.py:30
+msgid "Rewrite title, don't repeat yourself."
+msgstr "Дайте другое название публикации, не повторяйтесь."
+
+#: .\news\forms.py:38
+msgid "It's title, start with Capital!"
+msgstr "Это название, начните с заглавной буквы!"
+
+#: .\news\models.py:33 .\news\models.py:58
+msgid "News"
+msgstr "Новость"
+
+#: .\news\models.py:34
+msgid "Politics"
+msgstr "Политика"
+
+#: .\news\models.py:35
+msgid "Finance"
+msgstr "Финансы"
+
+#: .\news\models.py:36
+msgid "Education"
+msgstr "Образование"
+
+#: .\news\models.py:37
+msgid "Auto"
+msgstr "Авто"
+
+#: .\news\models.py:38
+msgid "Sport"
+msgstr "Спорт"
+
+#: .\news\models.py:59
+msgid "Article"
+msgstr "Статья"
+
+#: .\news\models.py:64
+msgid "post"
+msgstr "Новость или Статья"
+
+#: .\news\models.py:66
+#, fuzzy
+#| msgid "Title"
+msgid "title"
+msgstr "Название"
+
+#: .\news\models.py:67
+msgid "text"
+msgstr "текст"
+
+#: .\news\models.py:70
+#, fuzzy
+#| msgid "Category"
+msgid "category"
+msgstr "Категория"
 
 #: .\templates\403.html:12
 msgid "It seems you have no permission to visit this page"
@@ -42,44 +150,48 @@ msgstr "Профиль пользователя %(user)s"
 msgid "%(user)s Profile"
 msgstr "Профиль пользователя %(user)s"
 
-#: .\templates\accounts\profile_user.html:18
+#: .\templates\accounts\profile_user.html:13
+msgid "Username"
+msgstr "Никнейм"
+
+#: .\templates\accounts\profile_user.html:24
 msgid "Looking for something fresh from You, dear"
 msgstr "С нетерпением ждем новых публикаций, дорогой"
 
-#: .\templates\accounts\profile_user.html:20
-#: .\templates\flatpages\default.html:51
+#: .\templates\accounts\profile_user.html:26
+#: .\templates\flatpages\default.html:52
 msgid "Create post"
 msgstr "Создать пост"
 
-#: .\templates\accounts\profile_user.html:24 .\templates\news\post_edit.html:21
+#: .\templates\accounts\profile_user.html:30 .\templates\news\post_edit.html:21
 msgid "If you wish you could create one more post today"
 msgstr "Вы можете создать еще один пост сегодня"
 
-#: .\templates\accounts\profile_user.html:26 .\templates\news\post_edit.html:23
+#: .\templates\accounts\profile_user.html:32 .\templates\news\post_edit.html:23
 msgid "If you wish you could create"
 msgstr "Вы можете создать еще"
 
-#: .\templates\accounts\profile_user.html:26 .\templates\news\post_edit.html:23
+#: .\templates\accounts\profile_user.html:32 .\templates\news\post_edit.html:23
 msgid "more posts today"
 msgstr "поста сегодня"
 
-#: .\templates\accounts\profile_user.html:29 .\templates\news\post_edit.html:25
+#: .\templates\accounts\profile_user.html:35 .\templates\news\post_edit.html:25
 msgid "Today was a fruitful day, you have already published 3 posts"
 msgstr "Сегодня был плодотворный день, вы уже создали 3 поста"
 
-#: .\templates\accounts\profile_user.html:31
+#: .\templates\accounts\profile_user.html:37
 msgid "Have something fresh to tell everybody"
 msgstr "Вам есть что рассказать читателям"
 
-#: .\templates\accounts\profile_user.html:32
+#: .\templates\accounts\profile_user.html:38
 msgid "Fill out the form below to become an author"
 msgstr "Заполните форму по ссылке внизу, чтобы стать автором"
 
-#: .\templates\accounts\profile_user.html:34
+#: .\templates\accounts\profile_user.html:40
 msgid "Yes, I want to be an author!"
 msgstr "Да, я хочу стать автором!"
 
-#: .\templates\accounts\profile_user.html:39 .\templates\news\post.html:48
+#: .\templates\accounts\profile_user.html:45 .\templates\news\post.html:48
 msgid "now"
 msgstr "сейчас"
 
@@ -96,31 +208,31 @@ msgstr "Заполните данные"
 msgid "Save"
 msgstr "Сохранить"
 
-#: .\templates\flatpages\default.html:43 .\templates\news\posts.html:9
+#: .\templates\flatpages\default.html:44 .\templates\news\posts.html:9
 msgid "Posts"
 msgstr "Публикации"
 
-#: .\templates\flatpages\default.html:46
+#: .\templates\flatpages\default.html:47
 msgid "by Category"
 msgstr "по Категориям"
 
-#: .\templates\flatpages\default.html:56
+#: .\templates\flatpages\default.html:57
 msgid "About"
 msgstr "О проекте"
 
-#: .\templates\flatpages\default.html:59
+#: .\templates\flatpages\default.html:60
 msgid "Contact"
 msgstr "Контакт"
 
-#: .\templates\flatpages\default.html:74
+#: .\templates\flatpages\default.html:75
 msgid "Simple Log in"
 msgstr "Вход по..."
 
-#: .\templates\flatpages\default.html:79
+#: .\templates\flatpages\default.html:80
 msgid "Profile"
 msgstr "Профиль"
 
-#: .\templates\flatpages\default.html:82
+#: .\templates\flatpages\default.html:83
 msgid "Log out"
 msgstr "Выход"
 
@@ -133,9 +245,9 @@ msgstr "Публикация"
 msgid "Our publications"
 msgstr "Наши публикации"
 
-#: .\templates\news\post.html:13
-msgid "Category"
-msgstr "Категория"
+#: .\templates\news\post.html:24
+msgid "by"
+msgstr "автор"
 
 #: .\templates\news\post.html:32 .\templates\news\posts.html:49
 #: .\templates\news\posts_by_cat.html:48
@@ -210,11 +322,11 @@ msgstr "Дата публикации"
 
 #: .\templates\news\posts.html:33 .\templates\news\posts_by_cat.html:31
 msgid "Shorts"
-msgstr "Коротко"
+msgstr "Превью"
 
 #: .\templates\news\posts.html:34 .\templates\news\posts_by_cat.html:32
 msgid "Likes"
-msgstr "Нравится"
+msgstr "Рейтинг"
 
 #: .\templates\news\posts.html:36 .\templates\news\posts_by_cat.html:34
 msgid "Action"
@@ -262,3 +374,6 @@ msgstr "Вы подписаны на категорию '%(cat)s'"
 #: .\templates\news\posts_by_cat.html:100
 msgid "Not follow"
 msgstr "Отписаться"
+
+#~ msgid "Next publication is coming soon!"
+#~ msgstr "Следующая публикация ожидается вскоре!"

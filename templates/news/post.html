@@ -21,7 +21,7 @@
     </h6>
     <hr>
     <p>{{ post.getpost }}</p>
-    <h3>{{ post.title|censor|upper }} by {{ post.author|authorfullname|censor }}</h3>
+    <h3>{{ post.title|censor|upper }} {% trans "by" %} {{ post.author|authorfullname|censor }}</h3>
     <p>{{ post.time_in|date:'l d M Y' }}</p>
     <p>&nbsp;</p>
     <p><em>{{ post.text|censor }}</em></p>

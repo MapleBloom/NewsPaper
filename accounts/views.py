@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+
 from .forms import SignUpForm, UserForm
 from .permissions import ProfileUserPermissionRequiredMixin
 

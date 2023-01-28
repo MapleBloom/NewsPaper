@@ -4,6 +4,8 @@ from django.contrib.auth.models import User, Group
 from django.core.exceptions import ValidationError
 from allauth.account.forms import SignupForm
 from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
+from django.utils.translation import gettext as _
+
 from news.models import Author
 
 
@@ -26,10 +28,10 @@ class CustomSocialAccountAdapter(DefaultSocialAccountAdapter):
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['first_name',
-                  'last_name',
-                  'username',
-                  'email',
+        fields = [_('first_name'),
+                  _('last_name'),
+                  _('username'),
+                  _('email'),
                   ]
 
     def clean(self):
@@ -37,7 +39,7 @@ class UserForm(forms.ModelForm):
         for field, val in cleaned_data.items():
             if len(val) == 0:
                 raise ValidationError({
-                    field: 'This field should be filled'
+                    field: _('This field should be filled')
                 })
         return cleaned_data
 
@@ -51,18 +53,18 @@ class UserForm(forms.ModelForm):
 
 
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField(label='Email')
-    first_name = forms.CharField(label='First name')
-    last_name = forms.CharField(label='Last name')
+    email = forms.EmailField(label=_('Email'))
+    first_name = forms.CharField(label=_('First name'))
+    last_name = forms.CharField(label=_('Last name'))
 
     class Meta:
         model = User
-        fields = ['username',
-                  'first_name',
-                  'last_name',
-                  'email',
-                  'password1',
-                  'password2',
+        fields = [_('username'),
+                  _('first_name'),
+                  _('last_name'),
+                  _('email'),
+                  _('password1'),
+                  _('password2'),
                   ]
 
     def save(self, commit=True):

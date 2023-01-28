@@ -1,6 +1,6 @@
 from django import template
-from better_profanity import profanity
 from django.template.defaultfilters import stringfilter
+from better_profanity import profanity
 
 
 register = template.Library()
@@ -8,7 +8,7 @@ register = template.Library()
 
 LIKE_SYMBOLS = {
     'like': 'likes',
-    'star': 'stars'
+    'star': '*'
 }
 punctuation_list = ['.', ',', ';', ':', '...', '!', '?', '-', '"', '(', ')',
                     '@', '$', '*', '\n', '/']

@@ -10,8 +10,14 @@
 {% block content %}
     <h2>{% blocktranslate %}{{ user }} Profile{% endblocktranslate %}</h2>
     <hr>
-    <h6>Username: {{ user.username }}</h6>
-    <h6>Email: {{ user.email }}</h6>
+    <h6>{% trans "Username" %}: {{ user.username }}</h6>
+    <h6>{% trans "Email" %}: {{ user.email }}</h6>
+    {% if user.first_name %}
+        <h6>{% trans "First name" %}: {{ user.first_name }}</h6>
+    {% endif %}
+    {% if user.last_name %}
+        <h6>{% trans "Last name" %}: {{ user.last_name }}</h6>
+    {% endif %}
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     {% if perms.news.add_post and in_limit != 0 %}

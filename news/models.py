@@ -4,6 +4,8 @@ from django.db.models import Sum
 from datetime import datetime
 from django.urls import reverse
 from django.core.cache import cache
+from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy
 
 
 class Author(models.Model):
@@ -28,12 +30,12 @@ class Author(models.Model):
 
 class Category(models.Model):
     CATEGORIES = [
-        ('NW', 'News'),
-        ('PL', 'Politics'),
-        ('FN', 'Finance'),
-        ('ED', 'Education'),
-        ('AT', 'Auto'),
-        ('SP', 'Sport'),
+        ('NW', gettext_lazy('News')),
+        ('PL', gettext_lazy('Politics')),
+        ('FN', gettext_lazy('Finance')),
+        ('ED', gettext_lazy('Education')),
+        ('AT', gettext_lazy('Auto')),
+        ('SP', gettext_lazy('Sport')),
     ]
 
     category = models.CharField(max_length=2, choices=CATEGORIES, default='NW')
@@ -53,19 +55,19 @@ class UserCategory(models.Model):
 
 class Post(models.Model):
     POSTS = [
-        ('N', 'News'),
-        ('A', 'Article'),
+        ('N', gettext_lazy('News')),
+        ('A', gettext_lazy('Article')),
     ]
 
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
-    post = models.CharField(max_length=1, choices=POSTS, default='N')
+    post = models.CharField(gettext_lazy('post'), max_length=1, choices=POSTS, default='N')
     time_in = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=128)
-    text = models.TextField(default='In progress')
+    title = models.CharField(gettext_lazy('title'), max_length=128)
+    text = models.TextField(gettext_lazy('text'), default='In progress')
     rating = models.SmallIntegerField(default=0)
 
-    category = models.ManyToManyField(Category, through='PostCategory')
+    category = models.ManyToManyField(Category, through='PostCategory', verbose_name=gettext_lazy('category'))
 
     def get_title(self):
         return str(self.title).upper()
