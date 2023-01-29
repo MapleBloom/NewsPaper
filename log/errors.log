@@ -1165,3 +1165,86 @@ django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '
 2023-01-28 00:32:59 | ERROR | "GET /posts/51 HTTP/1.1" 500 217245 |
 C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
 None
+2023-01-29 13:15:23 | ERROR | Internal Server Error: /posts/1 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\utils\log.py |
+(<class 'django.db.utils.OperationalError'>, OperationalError('no such column: news_comment.text_en_us'), <traceback object at 0x000002392DD0D480>)
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: news_comment.text_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\template\base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\models\query.py", line 370, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\models\query.py", line 376, in __len__
+    self._fetch_all()
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\models\query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\models\query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\backends\utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: news_comment.text_en_us
+2023-01-29 13:15:23 | ERROR | "GET /posts/1 HTTP/1.1" 500 236437 |
+C:\Users\Marina\test_Projects\Django_Projects\venv\lib\site-packages\django\core\servers\basehttp.py |
+None

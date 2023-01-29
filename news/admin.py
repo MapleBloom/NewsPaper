@@ -49,14 +49,15 @@ class PostCategoryAdmin(admin.ModelAdmin):
     list_filter = ('category__category', 'post__title')
 
 
-class CommentAdmin(admin.ModelAdmin):  # TranslationAdmin
+class CommentAdmin(TranslationAdmin):
+    model = Comment
     list_display = [field.name for field in Comment._meta.get_fields()]
     list_filter = ('user', 'post')
     actions = [rating_up, rating_down]
 
 
 admin.site.register(Author, AuthorAdmin)
-admin.site.register(Category)  # CategoryAdmin
+admin.site.register(Category)
 admin.site.register(UserCategory, UserCategoryAdmin)
 admin.site.register(Post, PostAdmin)
 admin.site.register(PostCategory, PostCategoryAdmin)

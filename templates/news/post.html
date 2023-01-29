@@ -44,6 +44,10 @@
             <a href="/contact">{% trans "contact" %} {% user_deleter %}</a>
         {% endif %}
     </h6>
+    <p> </p>
+    {% for com in post.comment_set.all %}
+        <p>- {{ com.time_in|date:'d.m.Y' }}. {{ com.user }}: {{ com.text }}</p>
+    {% endfor %}
 <p>_____</p>
     <p>{% current_time '%d %b %Y %a' %} {% trans "now" %}</p>
 {% endblock content %}

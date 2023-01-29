@@ -1,17 +1,13 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Category, Post, Comment
+from .models import Post, Comment
 
 
-# @register(Category)
-# class CategoryTranslationOptions(TranslationOptions):
-#     fields = ('category', )
-#
-#
 # @register(Post)
 # class PostTranslationOptions(TranslationOptions):
-#     fields = ('post', 'time_in', 'title', 'text')
+#     fields = ('title', 'text')
 #
-#
-# @register(Comment)
-# class CommentTranslationOptions(TranslationOptions):
-#     fields = ('text', 'time_in')
+
+@register(Comment)
+class CommentTranslationOptions(TranslationOptions):
+    fields = ('text', )
+    empty_values = ''
