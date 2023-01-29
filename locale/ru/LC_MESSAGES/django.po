@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-28 06:50+0300\n"
+"POT-Creation-Date: 2023-01-29 22:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,7 +60,7 @@ msgstr "пароль1"
 msgid "password2"
 msgstr "пароль2"
 
-#: .\flatpages\admin.py:11
+#: .\flatpages\admin.py:12
 msgid "Advanced options"
 msgstr "Дополнительные возможности"
 
@@ -121,8 +121,6 @@ msgid "post"
 msgstr "Новость или Статья"
 
 #: .\news\models.py:66
-#, fuzzy
-#| msgid "Title"
 msgid "title"
 msgstr "Название"
 
@@ -131,10 +129,20 @@ msgid "text"
 msgstr "текст"
 
 #: .\news\models.py:70
-#, fuzzy
-#| msgid "Category"
 msgid "category"
 msgstr "Категория"
+
+#: .\news\models.py:120
+msgid "of"
+msgstr "автора"
+
+#: .\news\models.py:121
+msgid "from"
+msgstr "от"
+
+#: .\news\models.py:122
+msgid "with rating"
+msgstr "с рейтингом"
 
 #: .\templates\403.html:12
 msgid "It seems you have no permission to visit this page"
@@ -191,7 +199,7 @@ msgstr "Заполните форму по ссылке внизу, чтобы �
 msgid "Yes, I want to be an author!"
 msgstr "Да, я хочу стать автором!"
 
-#: .\templates\accounts\profile_user.html:45 .\templates\news\post.html:48
+#: .\templates\accounts\profile_user.html:45 .\templates\news\post.html:52
 msgid "now"
 msgstr "сейчас"
 

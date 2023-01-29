@@ -64,7 +64,7 @@ class Post(models.Model):
     post = models.CharField(gettext_lazy('post'), max_length=1, choices=POSTS, default='N')
     time_in = models.DateTimeField(auto_now_add=True)
     title = models.CharField(gettext_lazy('title'), max_length=128)
-    text = models.TextField(gettext_lazy('text'), default='')
+    text = models.TextField(gettext_lazy('text'), default='In progress')
     rating = models.SmallIntegerField(default=0)
 
     category = models.ManyToManyField(Category, through='PostCategory', verbose_name=gettext_lazy('category'))
@@ -117,8 +117,12 @@ class Comment(models.Model):
     rating = models.SmallIntegerField(default=0)
 
     def __str__(self):
-        return f'{self.text} of {self.user.first_name} {self.user.last_name.upper()} from '\
-                  + f'{self.time_in.strftime("%d-%m-%y")} with rating {self.rating}'
+        _of = gettext_lazy("of")
+        _from = gettext_lazy("from")
+        _with = gettext_lazy("with rating")
+
+        return f'{self.text} {_of} {self.user.first_name} {self.user.last_name.upper()} {_from} '\
+                  + f'{self.time_in.strftime("%d-%m-%y")} {_with} {self.rating}'
 
     def like(self):
         self.rating += 1
