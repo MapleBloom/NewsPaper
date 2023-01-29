@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load cache %}
+{% load static %}
 {% load i18n %}
 
 <html lang="en">
@@ -14,8 +16,6 @@
             {% endblock title %}
         </title>
 
-        {% load cache %}
-        {% load static %}
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>

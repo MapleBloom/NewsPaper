@@ -30,7 +30,7 @@ class AuthorAdmin(admin.ModelAdmin):
     search_fields = ('post__title', 'post__text')
 
 
-# class CategoryAdmin(TranslationAdmin):
+# class CategoryAdmin(admin.ModelAdmin):
 #     pass
 
 
@@ -38,7 +38,8 @@ class UserCategoryAdmin(admin.ModelAdmin):
     list_filter = ('categorySubscribe__category', 'userSubscribe__username')
 
 
-class PostAdmin(admin.ModelAdmin):  # TranslationAdmin
+class PostAdmin(TranslationAdmin):
+    model = Post
     list_display = ('get_title', 'getpost', 'preview', 'author', 'date_in', 'rating')
     list_filter = ('post', 'category__category')
     search_fields = ('author__userAuthor__first_name', 'author__userAuthor__last_name')

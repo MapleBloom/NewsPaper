@@ -64,7 +64,7 @@ class Post(models.Model):
     post = models.CharField(gettext_lazy('post'), max_length=1, choices=POSTS, default='N')
     time_in = models.DateTimeField(auto_now_add=True)
     title = models.CharField(gettext_lazy('title'), max_length=128)
-    text = models.TextField(gettext_lazy('text'), default='In progress')
+    text = models.TextField(gettext_lazy('text'), default='')
     rating = models.SmallIntegerField(default=0)
 
     category = models.ManyToManyField(Category, through='PostCategory', verbose_name=gettext_lazy('category'))
@@ -112,7 +112,7 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    text = models.TextField(default='')
+    text = models.TextField(default='...')
     time_in = models.DateTimeField(auto_now_add=True)
     rating = models.SmallIntegerField(default=0)
 
