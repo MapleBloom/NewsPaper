@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.http import HttpResponseRedirect, HttpResponse
-# from django.shortcuts import render
 # from datetime import datetime
+from zoneinfo import ZoneInfoNotFoundError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
@@ -174,6 +174,18 @@ class PostDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Post
     template_name = 'news/post_delete.html'
     success_url = reverse_lazy('post_list')
+
+
+def set_timezone(request):
+    if request.method == 'POST':
+        next = request.GET.get('next')
+        try:
+            request.session['django_timezone'] = request.POST['timezone']
+        except ZoneInfoNotFoundError:
+            request.session['django_timezone'] = 'UTC'
+        except FileNotFoundError:
+            request.session['django_timezone'] = 'UTC'
+        return HttpResponseRedirect(next)
 
 
 class TryCeleryView(View):

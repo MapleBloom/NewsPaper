@@ -12,7 +12,7 @@
 {% block content %}
     <h2>{% trans "Our publications" %}</h2>
     <!--<p>{{ time_now|date:'M d Y' }} today</p>-->
-    <p>{% current_time '%b %d %Y %A' %} {% trans "today" %}</p>
+    <p>{% trans "today" %} {{ current_date }} {{ current_date|date:"l"|lower }}</p>
     <h6>{% trans "You see" %} {{ posts|length }} {% trans "out of" %} {{ paginator.count }} {% trans "publications at our portal" %}</h6>
         {% trans "Follow our agenda!" as if_none %}
     {% cache 10 posts %}<h4> {{ next_publication|default_if_none:if_none }} </h4>{% endcache %}

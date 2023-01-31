@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (PostsList, PostDetail, PostsByCategory,
-                    PostCreate, PostUpdate, PostDelete, subscribe, unsubscribe,
+                    PostCreate, PostUpdate, PostDelete,
+                    subscribe, unsubscribe, set_timezone,
                     TryCeleryView)
 
 from django.views.decorators.cache import cache_page
@@ -16,4 +17,5 @@ urlpatterns = [
     path('<int:pk>/update', PostUpdate.as_view(), name='post_update'),
     path('<int:pk>/delete', PostDelete.as_view(), name='post_delete'),
     path('test-celery', cache_page(60*1)(TryCeleryView.as_view()), name='test_celery'),
+    path('set_timezone', set_timezone, name='set_timezone'),
 ]

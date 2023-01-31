@@ -10,7 +10,7 @@
  
 {% block content %}
     <h2>{% trans "Our publications" %}</h2>
-    <p>{% current_time '%b %d %Y %A' %} {% trans "today" %}</p>
+    <p>{% trans "today" %} {{ current_date }} {{ current_date|date:"l"|lower }}</p>
     <h5>{% trans "Category to deep into" %}:</h5>
     <form action="" method="get">
             {% csrf_token %}

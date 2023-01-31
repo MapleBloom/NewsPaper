@@ -25,6 +25,7 @@
     <p>{{ post.time_in|date:'l d M Y' }}</p>
     <p>&nbsp;</p>
     <p><em>{{ post.text|censor }}</em></p>
+    <p>{{ post.rating|likes_number:'star' }}</p>
     <p>&nbsp;</p>
     <p>
         {% if perms.news.change_post and user == post.author.userAuthor %}
@@ -46,7 +47,7 @@
     </h6>
     <p> </p>
     {% for com in post.comment_set.all %}
-        <p>- {{ com.time_in|date:'d.m.Y' }}. {{ com.user }}: {{ com.text }}</p>
+        <p>- {{ com.time_in|date:'d.m.Y' }}. {{ com.user }}: {{ com.text }} &emsp; {{ com.rating|likes_number:'star' }}</p>
     {% endfor %}
 <p>_____</p>
     <p>{% current_time '%d %b %Y %a' %} {% trans "now" %}</p>

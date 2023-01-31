@@ -2,6 +2,7 @@
 {% load cache %}
 {% load static %}
 {% load i18n %}
+{% load tz %}
 
 <html lang="en">
     <head>
@@ -18,12 +19,17 @@
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <style>
+            body {background-color: {% if current_hour >= 19 or current_hour <= 7 %} LightSteelBlue
+            {% else %} MintCream {% endif %};}
+        </style>
     </head>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
-                {% cache 120 headerNP %}
+                <table>
+                <tr><td> {% cache 120 headerNP %}
                 <a class="navbar-brand" href="/admin/">News Portal</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarResponsive"
@@ -32,6 +38,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% endcache %}
+                </td></tr>
+                <tr><td><div class="text-white">
+                    UTC {{ current_utc }} ,
+                    Local {{ current_time }}
+                </div></td></tr>
+                </table>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 <!--                        <li class="nav-item active">-->
@@ -70,21 +82,10 @@
                 </div>
                 <div class="nav-right">
                     <ul class="navbar-nav ml-auto">
-                        {% if not user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" href="/simpleaccounts/login">{% trans "Simple Log in" %}</a>
-                            </li>
-                        {% endif %}
-                        {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'profile_user' pk=user.id %}">{% trans "Profile" %} {{ user.username }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/simpleaccounts/logout">{% trans "Log out" %}</a>
-                            </li>
-                        {% endif %}
-                            <li class="nav-item">
-                                <form action="{% url 'set_language' %}" method="POST">
+                                <table>
+                                <tr><td>
+                                <form action="{% url 'set_language' %}" method="post" align="right">
                                     {% csrf_token %}
                                     <input type="hidden" name="next" value="{{ redirect_to }}">
                                     <select name="language" id="">
@@ -99,7 +100,39 @@
                                     </select>
                                     <input type="submit" value=">>">
                                 </form>
+                                </td></tr>
+                                <tr><td class="text-white">
+                                    {% get_current_timezone as TIME_ZONE %}
+                                    <form action="{% url 'set_timezone' %}?next={{current_url}}" method="post">
+                                        {% csrf_token %}
+                                        <label for="timezone">{% trans "Time zone" %}:</label>
+                                        <select name="timezone">
+                                            {% for tz in timezones %}
+                                            <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <input type="submit" value=">>">
+                                    </form>
+                                </td></tr>
+                                </table>
                             </li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <ul class="navbar-nav ml-auto">
+                        {% if not user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/simpleaccounts/login">{% trans "Simple Log in" %}</a>
+                            </li>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'profile_user' pk=user.id %}">{% trans "Profile" %} {{ user.username }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/simpleaccounts/logout">{% trans "Log out" %}</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

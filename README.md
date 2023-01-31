@@ -38,6 +38,8 @@ Admin panel customization.
 
 Customize logs at settings.py
 
+Localization and internationalization.
+
 
 :arrow_up: [to content](README.md#Content)
 
@@ -74,6 +76,10 @@ Customize logs at settings.py
 <p> </p>
 
 - Send logs to console, files, e-mail depending on levels and loggers.
+<p> </p>
+
+- Add choice of language. Translate static elements and models.
+- Add choice of time zone and work with current time. 
 <p> </p>
 
 
@@ -116,6 +122,12 @@ Customize logs at settings.py
 
 - customize logs records at settings.py dictionary describing loggers, handlers, filters and formatters.
 - filter events by level to adjust formatting at handlers. 
+<p> </p>
+
+- widgets for language and timezone at navbar.
+- color of pages depending on the time of the day.
+- gettext to translate text at .py files and templates.
+- modeltranslation to translate dynamic part (from models). 
 <p> </p>
 
 

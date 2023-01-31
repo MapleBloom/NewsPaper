@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-29 22:33+0300\n"
+"POT-Creation-Date: 2023-01-30 02:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,7 +167,7 @@ msgid "Looking for something fresh from You, dear"
 msgstr "С нетерпением ждем новых публикаций, дорогой"
 
 #: .\templates\accounts\profile_user.html:26
-#: .\templates\flatpages\default.html:52
+#: .\templates\flatpages\default.html:60
 msgid "Create post"
 msgstr "Создать пост"
 
@@ -199,7 +199,7 @@ msgstr "Заполните форму по ссылке внизу, чтобы �
 msgid "Yes, I want to be an author!"
 msgstr "Да, я хочу стать автором!"
 
-#: .\templates\accounts\profile_user.html:45 .\templates\news\post.html:52
+#: .\templates\accounts\profile_user.html:45 .\templates\news\post.html:53
 msgid "now"
 msgstr "сейчас"
 
@@ -216,33 +216,37 @@ msgstr "Заполните данные"
 msgid "Save"
 msgstr "Сохранить"
 
-#: .\templates\flatpages\default.html:44 .\templates\news\posts.html:9
+#: .\templates\flatpages\default.html:52 .\templates\news\posts.html:9
 msgid "Posts"
 msgstr "Публикации"
 
-#: .\templates\flatpages\default.html:47
+#: .\templates\flatpages\default.html:55
 msgid "by Category"
 msgstr "по Категориям"
 
-#: .\templates\flatpages\default.html:57
+#: .\templates\flatpages\default.html:65
 msgid "About"
 msgstr "О проекте"
 
-#: .\templates\flatpages\default.html:60
+#: .\templates\flatpages\default.html:68
 msgid "Contact"
 msgstr "Контакт"
 
-#: .\templates\flatpages\default.html:75
+#: .\templates\flatpages\default.html:83
 msgid "Simple Log in"
 msgstr "Вход по..."
 
-#: .\templates\flatpages\default.html:80
+#: .\templates\flatpages\default.html:88
 msgid "Profile"
 msgstr "Профиль"
 
-#: .\templates\flatpages\default.html:83
+#: .\templates\flatpages\default.html:91
 msgid "Log out"
 msgstr "Выход"
+
+#: .\templates\flatpages\default.html:116
+msgid "Time zone"
+msgstr "Часовой пояс"
 
 #: .\templates\news\post.html:8
 msgid "Post"
@@ -257,26 +261,26 @@ msgstr "Наши публикации"
 msgid "by"
 msgstr "автор"
 
-#: .\templates\news\post.html:32 .\templates\news\posts.html:49
+#: .\templates\news\post.html:33 .\templates\news\posts.html:49
 #: .\templates\news\posts_by_cat.html:48
 msgid "Update"
 msgstr "Обновить"
 
-#: .\templates\news\post.html:37 .\templates\news\post_delete.html:15
+#: .\templates\news\post.html:38 .\templates\news\post_delete.html:15
 #: .\templates\news\post_delete.html:16 .\templates\news\posts.html:54
 #: .\templates\news\posts_by_cat.html:54
 msgid "Delete"
 msgstr "Удалить"
 
-#: .\templates\news\post.html:43
+#: .\templates\news\post.html:44
 msgid "If you've changed your mind and want to delete this lovely post"
 msgstr "Если вы передумали и хотите удалить этот чудесный пост"
 
-#: .\templates\news\post.html:43
+#: .\templates\news\post.html:44
 msgid "you are welcome to"
 msgstr "просим вас"
 
-#: .\templates\news\post.html:44
+#: .\templates\news\post.html:45
 msgid "contact"
 msgstr "связаться с"
 
