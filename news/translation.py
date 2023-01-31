@@ -1,4 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
+from django.contrib.flatpages.models import FlatPage
 from .models import Post, Comment
 
 
@@ -11,3 +12,8 @@ class PostTranslationOptions(TranslationOptions):
 class CommentTranslationOptions(TranslationOptions):
     fields = ('text', )
     empty_values = ''
+
+
+@register(FlatPage)
+class FlatPageTranslationOptions(TranslationOptions):
+    fields = ('title', 'content')

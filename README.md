@@ -79,6 +79,7 @@ Localization and internationalization.
 <p> </p>
 
 - Add choice of language. Translate static elements and models.
+- Flatpages translation.
 - Add choice of time zone and work with current time. 
 <p> </p>
 
@@ -127,7 +128,8 @@ Localization and internationalization.
 - widgets for language and timezone at navbar.
 - color of pages depending on the time of the day.
 - gettext to translate text at .py files and templates.
-- modeltranslation to translate dynamic part (from models). 
+- modeltranslation to translate dynamic part (from models).
+- flatpages and modeltranslation - details of migrations.
 <p> </p>
 
 

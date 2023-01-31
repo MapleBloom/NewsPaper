@@ -133,6 +133,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+MIGRATION_MODULES = {
+    'flatpages': 'flatpages.migrations',
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
