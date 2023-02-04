@@ -1,3 +1,4 @@
+import django_filters
 from django.conf import settings
 from django.http import HttpResponseRedirect, HttpResponse
 # from datetime import datetime
@@ -5,18 +6,21 @@ from zoneinfo import ZoneInfoNotFoundError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
+from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views import View
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.core.cache import cache
-from django.utils.translation import gettext as _
+from django.shortcuts import render
+from rest_framework import viewsets, permissions
 
-from .models import Post, Category
+from .models import Post, Category, Comment
 from .filters import PostFilter, CategoryFilter
 from .forms import PostForm
 from .permissions import ChangePermissionRequiredMixin, CreatePermissionRequiredMixin
 from .tasks import new_post_message, send_something
+from .serializers import PostSerializer, CommentSerializer, UserSerializer
 # import logging
 
 # logger = logging.getLogger(__name__)
@@ -192,3 +196,64 @@ class TryCeleryView(View):
     def get(self, request):
         send_something.delay()
         return HttpResponse('Hello from celery!')
+
+
+class PostViewset(viewsets.ReadOnlyModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [permissions.AllowAny]
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_fields = ["post"]
+
+
+class CommentViewset(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+
+class UserViewset(viewsets.ReadOnlyModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class NewsList(ListView):
+    model = Post
+    ordering = '-time_in'
+    template_name = 'news/posts.html'
+    context_object_name = 'posts'
+    paginate_by = 4
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(post='N')
+        self.filterset = PostFilter(self.request.GET, queryset)
+        return self.filterset.qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['time_now'] = datetime.utcnow()  Now use tag instead
+        context['filterset'] = self.filterset
+        context['next_publication'] = None    # _('Next publication is coming soon!')
+        return context
+
+
+class ArticlesList(ListView):
+    model = Post
+    ordering = '-time_in'
+    template_name = 'news/posts.html'
+    context_object_name = 'posts'
+    paginate_by = 4
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(post='A')
+        self.filterset = PostFilter(self.request.GET, queryset)
+        return self.filterset.qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['time_now'] = datetime.utcnow()  Now use tag instead
+        context['filterset'] = self.filterset
+        context['next_publication'] = None    # _('Next publication is coming soon!')
+        return context

@@ -40,6 +40,8 @@ Customize logs at settings.py
 
 Localization and internationalization.
 
+REST API
+
 
 :arrow_up: [to content](README.md#Content)
 
@@ -81,6 +83,9 @@ Localization and internationalization.
 - Add choice of language. Translate static elements and models.
 - Flatpages translation.
 - Add choice of time zone and work with current time. 
+<p> </p>
+
+- Use Django Rest Framework. 
 <p> </p>
 
 
@@ -130,6 +135,11 @@ Localization and internationalization.
 - gettext to translate text at .py files and templates.
 - modeltranslation to translate dynamic part (from models).
 - flatpages and modeltranslation - details of migrations.
+<p> </p>
+
+- viewsets for Comment model and its reverse relationship models by means of Django Rest Framework with Urls.
+- GET, POST, PUT, PATCH, DELETE requests.
+- authentication at app and views, filtration, pagination.
 <p> </p>
 
 

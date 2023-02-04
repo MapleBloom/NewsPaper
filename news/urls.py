@@ -1,14 +1,17 @@
 from django.urls import path
+from django.views.decorators.cache import cache_page
+
 from .views import (PostsList, PostDetail, PostsByCategory,
+                    NewsList, ArticlesList,
                     PostCreate, PostUpdate, PostDelete,
                     subscribe, unsubscribe, set_timezone,
                     TryCeleryView)
 
-from django.views.decorators.cache import cache_page
-
 
 urlpatterns = [
     path('', PostsList.as_view(), name='post_list'),
+    path('news', NewsList.as_view(), name='news_list'),
+    path('articles', ArticlesList.as_view(), name='articles_list'),
     path('<int:pk>', PostDetail.as_view(), name='post_detail'),
     path('posts-by-category', PostsByCategory.as_view(), name='posts_by_cat'),
     path('posts-by-category/<int:pk>/subscribe', subscribe, name='subscribe'),

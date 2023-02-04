@@ -127,7 +127,8 @@
                         {% endif %}
                         {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'profile_user' pk=user.id %}">{% trans "Profile" %} {{ user.username }}</a>
+                                <a class="nav-link" href="{% url 'profile_user' pk=user.id %}">
+                                    {% trans "Profile" %} {{ user.username }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/simpleaccounts/logout">{% trans "Log out" %}</a>
