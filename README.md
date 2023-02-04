@@ -30,7 +30,7 @@ Sending e-mails.
 Synchronous and asynchronous task execution. Redis & Celery.
 Sending e-mails by schedule.
 
-Cashing.
+Caching.
 
 Custom commands for command line.
 
@@ -70,7 +70,7 @@ REST API
 
 - Asynchronous task to send email after event.
 - Raise the task and send email by schedule without main process interruption.
-- Different scenarios of cashing.
+- Different scenarios of caching.
 <p> </p>
 
 - Custom console command via class Command.
@@ -117,8 +117,8 @@ REST API
 
 - organize task queue on Redis server.
 - cope with task queue by Celery.
-- cash temporary the whole view and parts of templates. 
-- cash object between savings. 
+- cache temporary the whole view and parts of templates. 
+- cache objects between savings. 
 <p> </p>
 
 - console command to show posts names by selected category.

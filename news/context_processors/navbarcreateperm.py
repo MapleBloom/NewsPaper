@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from django.utils import timezone
 import zoneinfo
-from ..models import *
+from ..models import Post
 
 
 def count_post_create(request, hours=24, limit=3):
